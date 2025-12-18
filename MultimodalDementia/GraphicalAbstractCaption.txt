@@ -1,0 +1,1 @@
+Receiver operating characteristic curves for text-only, audio-only, and late-stage fusion models on audio files. Fusion of LLM-augmented lexical features with eGeMAPS acoustics pushes performance from AUC 0.710 (text) and 0.735 (audio) to 0.768 (fusion), demonstrating complementary predictive capabilities in a low-signal, pre-diagnostic setting.
