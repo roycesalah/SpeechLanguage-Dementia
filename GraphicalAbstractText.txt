@@ -1,0 +1,1 @@
+LLM-enhanced lexical features and eGeMAPS acoustics capture complementary weak signals of early dementia in naturalistic speech. Late-stage fusion improved discrimination over either modality alone, supporting a scalable, pre-diagnostic screening approach for remote patient monitoring.
