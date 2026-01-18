@@ -17,13 +17,28 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score, roc_curve
-from sklearn.model_selection import GroupKFold
+from sklearn.model_selection import GroupKFold, StratifiedKFold
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import StandardScaler
 from catboost import CatBoostClassifier
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 from sklearn.calibration import calibration_curve
+
+# ---------------- Definitions ---------------- # 
+def make_text_model(pos_weight, seed):
+    return CatBoostClassifier(
+        iterations=700, depth=6, learning_rate=0.05,
+        loss_function="Logloss", random_seed=seed,
+        class_weights=[1.0, pos_weight], verbose=False
+    )
+
+def make_audio_model(seed):
+    return RandomForestClassifier(
+        n_estimators=500, n_jobs=-1,
+        class_weight="balanced_subsample",
+        random_state=seed
+    )
 
 # ---------------- Hyper‑parameters ---------------- #
 K_FOLDS      = 10
@@ -49,7 +64,6 @@ text_cols  = [
 ] + sbert_cols
 
 # ---------------- Merge + filter ------------------ #
-
 def parse_clip(path: str):
     parts = PurePath(path).parts
     label   = 1 if parts[1] == "dementia" else 0
@@ -96,6 +110,8 @@ auc_t, auc_a, auc_f = [], [], []
 raw = {m: dict(tp=0, tn=0, fp=0, fn=0) for m in ["Text", "Audio", "Fusion"]}
 all_y, all_p_txt, all_p_aud, all_p_fus = [], [], [], []
 
+inner_cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=RANDOM_STATE)
+
 for tr, te in cv.split(X_txt, y, groups):
     # --- text head (CatBoost) ---
     txt_pos_w = (y[tr] == 0).sum() / (y[tr] == 1).sum()
@@ -109,8 +125,6 @@ for tr, te in cv.split(X_txt, y, groups):
         verbose=False,
     )
     text_clf.fit(X_txt[tr], y[tr], sample_weight=weights[tr])
-    p_txt = text_clf.predict_proba(X_txt[te])[:, 1]
-    y_txt = p_txt >= 0.5
 
     # --- audio head (RandomForest) ---
     aud_clf = RandomForestClassifier(
@@ -120,20 +134,76 @@ for tr, te in cv.split(X_txt, y, groups):
         random_state=RANDOM_STATE,
     )
     aud_clf.fit(X_aud[tr], y[tr], sample_weight=weights[tr])
-    p_aud = aud_clf.predict_proba(X_aud[te])[:, 1]
-    y_aud = p_aud >= 0.5
 
     # --- fusion ---
-    Z_tr = np.column_stack([
-        text_clf.predict_proba(X_txt[tr])[:, 1],
-        aud_clf.predict_proba(X_aud[tr])[:, 1],
-    ])
-    Z_te = np.column_stack([p_txt, p_aud])
+    inner_cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=RANDOM_STATE)
+    oof_txt = np.zeros(len(tr))
+    oof_aud = np.zeros(len(tr))
 
-    blender = MLPClassifier(hidden_layer_sizes=(16,), max_iter=500, random_state=RANDOM_STATE)
-    blender.fit(Z_tr, y[tr], sample_weight=weights[tr])
+    Xtxt_tr, Xaud_tr = X_txt[tr], X_aud[tr]
+    y_tr = y[tr]
+    w_tr = weights[tr]
+
+    for itrn, ival in inner_cv.split(Xtxt_tr, y_tr):
+        # train base models on inner-train
+        txt_pos_w_in = (y_tr[itrn] == 0).sum() / max(1, (y_tr[itrn] == 1).sum())
+
+        txt_model = CatBoostClassifier(
+            iterations=700, depth=6, learning_rate=0.05,
+            loss_function="Logloss", random_seed=RANDOM_STATE,
+            class_weights=[1.0, txt_pos_w_in], verbose=False
+        )
+        aud_model = RandomForestClassifier(
+            n_estimators=500, n_jobs=-1,
+            class_weight="balanced_subsample",
+            random_state=RANDOM_STATE
+        )
+
+        txt_model.fit(Xtxt_tr[itrn], y_tr[itrn], sample_weight=w_tr[itrn])
+        aud_model.fit(Xaud_tr[itrn], y_tr[itrn], sample_weight=w_tr[itrn])
+
+        # predict on inner-val
+        oof_txt[ival] = txt_model.predict_proba(Xtxt_tr[ival])[:, 1]
+        oof_aud[ival] = aud_model.predict_proba(Xaud_tr[ival])[:, 1]
+
+    Z_oof = np.column_stack([oof_txt, oof_aud])
+
+    # fit blender on OOF preds
+    # blender = MLPClassifier(hidden_layer_sizes=(16,), max_iter=500, random_state=RANDOM_STATE)
+    # blender.fit(Z_oof, y_tr, sample_weight=w_tr)
+    
+    blender = LogisticRegression(
+        solver="lbfgs",
+        max_iter=2000,
+        class_weight=None,
+        random_state=RANDOM_STATE
+    )
+    blender.fit(Z_oof, y_tr, sample_weight=w_tr)
+
+    # refit base models on full outer-train (so test uses fully-trained heads)
+    txt_pos_w = (y_tr == 0).sum() / max(1, (y_tr == 1).sum())
+
+    text_clf = CatBoostClassifier(
+        iterations=700, depth=6, learning_rate=0.05,
+        loss_function="Logloss", random_seed=RANDOM_STATE,
+        class_weights=[1.0, txt_pos_w], verbose=False
+    )
+    aud_clf = RandomForestClassifier(
+        n_estimators=500, n_jobs=-1,
+        class_weight="balanced_subsample",
+        random_state=RANDOM_STATE
+    )
+
+    text_clf.fit(Xtxt_tr, y_tr, sample_weight=w_tr)
+    aud_clf.fit(Xaud_tr, y_tr, sample_weight=w_tr)
+
+    # now predict OUTER TEST
+    p_txt = text_clf.predict_proba(X_txt[te])[:, 1]
+    p_aud = aud_clf.predict_proba(X_aud[te])[:, 1]
+    Z_te  = np.column_stack([p_txt, p_aud])
+
     p_fus = blender.predict_proba(Z_te)[:, 1]
-    y_fus = p_fus >= 0.15
+    y_fus = p_fus >= 0.15  # (keep for now, but consider making consistent)
 
     # --- metrics ---
     auc_t.append(roc_auc_score(y[te], p_txt))
@@ -141,11 +211,19 @@ for tr, te in cv.split(X_txt, y, groups):
     auc_f.append(roc_auc_score(y[te], p_fus))
 
     # raw counts
-    for mod, y_pred in zip(["Text", "Audio", "Fusion"], [y_txt, y_aud, y_fus]):
+    pred_map = {
+    "Text":  (p_txt, 0.5),
+    "Audio": (p_aud, 0.5),
+    "Fusion": (p_fus, 0.15),
+    }
+
+    for mod, (p, thr) in pred_map.items():
+        y_pred = (p >= thr)
         raw[mod]["tp"] += int(((y_pred == 1) & (y[te] == 1)).sum())
         raw[mod]["tn"] += int(((y_pred == 0) & (y[te] == 0)).sum())
         raw[mod]["fp"] += int(((y_pred == 1) & (y[te] == 0)).sum())
         raw[mod]["fn"] += int(((y_pred == 0) & (y[te] == 1)).sum())
+
 
     all_y.append(y[te])
     all_p_txt.append(p_txt)

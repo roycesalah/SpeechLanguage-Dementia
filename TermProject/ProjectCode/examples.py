@@ -9,7 +9,7 @@ df = pd.read_csv("text_features_lexical.csv")
 df["label"] = df.clip_id.str.contains("nodementia", case=False).map({True: 0, False: 1})
 
 
-# ✅ Use label instead of clip_id to split
+# Use label instead of clip_id to split
 df_dementia = df[df.label == 1]
 df_control = df[df.label == 0]
 
