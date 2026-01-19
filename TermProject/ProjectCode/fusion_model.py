@@ -17,7 +17,7 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score, roc_curve
-from sklearn.model_selection import GroupKFold, StratifiedKFold
+from sklearn.model_selection import GroupKFold, StratifiedGroupKFold
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import StandardScaler
 from catboost import CatBoostClassifier
@@ -86,146 +86,143 @@ qual_mask = (df.voiced_sec >= MIN_SECONDS) & (df.wpm >= MIN_WPM)
 df = df[qual_mask].reset_index(drop=True)
 print(f"After quality filter: {df.shape[0]} clips")
 
-# ---------------- Speaker aggregation ------------- #
-num_cols = [c for c in df.columns if c not in ["clip_id","speaker","label","years_pre_dx"]]
-agg_df = (
-    df.groupby("speaker")
-      .agg({**{c:"mean" for c in num_cols}, "label":"first", "years_pre_dx":"min"})
-      .reset_index()
-)
-print(f"Speaker-level rows: {agg_df.shape[0]}")
+# ------------------ Clip level rows --------------- #
+text_cols = [c for c in text_df.columns if c != "clip_id" and c in df.columns]
+audio_cols = [c for c in audio_df.columns if c not in ["clip_id", "voiced_sec", "wpm"] and c in df.columns]
 
-text_cols  = [c for c in text_df.columns if c != "clip_id"]
-audio_cols = [c for c in audio_df.columns if c not in ["clip_id","voiced_sec","wpm"]]
+# Optional sanity check: ensure we have clip-level rows
+print(f"Clip-level rows: {df.shape[0]}")
+print(f"Unique speakers: {df['speaker'].nunique()}")
 
-X_txt  = agg_df[text_cols].values
-X_aud  = agg_df[audio_cols].values
-y      = agg_df.label.values
-groups = agg_df.speaker.values
-weights = np.exp(-np.nan_to_num(agg_df.years_pre_dx, nan=0.0) / TAU_YEARS)
+# change for clip level audio (change from speaker level aggregation)
+X_txt = df[text_cols].to_numpy()
+X_aud = df[audio_cols].to_numpy()
+y = df["label"].to_numpy().astype(int)
+
+# ensuring that groups must align with clip rows (speaker id per clip)
+groups = df["speaker"].to_numpy()
+
+# weights: exp(-years/TAU); controls should be ~1.0
+# If years_pre_dx is NaN (controls), set weight = 1.0
+years = df["years_pre_dx"].to_numpy()
+years_safe = np.where(np.isfinite(years), years, 0.0)
+weights = np.exp(-years_safe / TAU_YEARS).astype(float)
 
 # ---------------- CV + Metrics -------------------- #
-cv = GroupKFold(n_splits=K_FOLDS)
+
+# Outer CV: group-aware by speaker (modification for clip level rows)
+n_groups = len(np.unique(groups))
+outer_splits = min(K_FOLDS, n_groups)
+if outer_splits < 2:
+    raise ValueError(f"Not enough unique speakers for CV (found {n_groups}).")
+
+outer_cv = GroupKFold(n_splits=outer_splits)
+
 auc_t, auc_a, auc_f = [], [], []
 raw = {m: dict(tp=0, tn=0, fp=0, fn=0) for m in ["Text", "Audio", "Fusion"]}
 all_y, all_p_txt, all_p_aud, all_p_fus = [], [], [], []
 
-inner_cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=RANDOM_STATE)
+for fold, (tr, te) in enumerate(outer_cv.split(X_txt, y, groups=groups), 1):
 
-for tr, te in cv.split(X_txt, y, groups):
-    # --- text head (CatBoost) ---
-    txt_pos_w = (y[tr] == 0).sum() / (y[tr] == 1).sum()
-    text_clf = CatBoostClassifier(
-        iterations=700,
-        depth=6,
-        learning_rate=0.05,
-        loss_function="Logloss",
-        random_seed=RANDOM_STATE,
-        class_weights=[1.0, txt_pos_w],
-        verbose=False,
-    )
-    text_clf.fit(X_txt[tr], y[tr], sample_weight=weights[tr])
-
-    # --- audio head (RandomForest) ---
-    aud_clf = RandomForestClassifier(
-        n_estimators=500,
-        n_jobs=-1,
-        class_weight="balanced_subsample",
-        random_state=RANDOM_STATE,
-    )
-    aud_clf.fit(X_aud[tr], y[tr], sample_weight=weights[tr])
-
-    # --- fusion ---
-    inner_cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=RANDOM_STATE)
-    oof_txt = np.zeros(len(tr))
-    oof_aud = np.zeros(len(tr))
-
+    # outer-train data
     Xtxt_tr, Xaud_tr = X_txt[tr], X_aud[tr]
     y_tr = y[tr]
     w_tr = weights[tr]
+    g_tr = groups[tr]
 
-    for itrn, ival in inner_cv.split(Xtxt_tr, y_tr):
-        # train base models on inner-train
-        txt_pos_w_in = (y_tr[itrn] == 0).sum() / max(1, (y_tr[itrn] == 1).sum())
+    # outer-test data
+    Xtxt_te, Xaud_te = X_txt[te], X_aud[te]
+    y_te = y[te]
 
-        txt_model = CatBoostClassifier(
-            iterations=700, depth=6, learning_rate=0.05,
-            loss_function="Logloss", random_seed=RANDOM_STATE,
-            class_weights=[1.0, txt_pos_w_in], verbose=False
+    # --- build OOF preds on outer-train, using group-safe inner CV ---
+    n_groups_tr = len(np.unique(g_tr))
+    inner_splits = min(5, n_groups_tr)
+    if inner_splits < 2:
+        raise ValueError(
+            f"Not enough unique speakers in outer-train for inner CV "
+            f"(found {n_groups_tr} in fold {fold})."
         )
-        aud_model = RandomForestClassifier(
-            n_estimators=500, n_jobs=-1,
-            class_weight="balanced_subsample",
-            random_state=RANDOM_STATE
-        )
+
+
+    inner_cv = StratifiedGroupKFold(
+        n_splits=inner_splits, shuffle=True, random_state=RANDOM_STATE
+    )
+    inner_splitter = inner_cv.split(Xtxt_tr, y_tr, groups=g_tr)
+
+    oof_txt = np.zeros(len(tr), dtype=float)
+    oof_aud = np.zeros(len(tr), dtype=float)
+
+    for itrn, ival in inner_splitter:
+        # ensuring that inner train has positives
+        pos = int((y_tr[itrn] == 1).sum())
+        neg = int((y_tr[itrn] == 0).sum())
+        txt_pos_w_in = neg / max(1, pos)
+
+        txt_model = make_text_model(pos_weight=txt_pos_w_in, seed=RANDOM_STATE)
+        aud_model = make_audio_model(seed=RANDOM_STATE)
 
         txt_model.fit(Xtxt_tr[itrn], y_tr[itrn], sample_weight=w_tr[itrn])
         aud_model.fit(Xaud_tr[itrn], y_tr[itrn], sample_weight=w_tr[itrn])
 
-        # predict on inner-val
         oof_txt[ival] = txt_model.predict_proba(Xtxt_tr[ival])[:, 1]
         oof_aud[ival] = aud_model.predict_proba(Xaud_tr[ival])[:, 1]
 
     Z_oof = np.column_stack([oof_txt, oof_aud])
 
-    # fit blender on OOF preds
-    # blender = MLPClassifier(hidden_layer_sizes=(16,), max_iter=500, random_state=RANDOM_STATE)
-    # blender.fit(Z_oof, y_tr, sample_weight=w_tr)
-    
+    # --- fit blender on OOF preds (outer-train only) ---
     blender = LogisticRegression(
         solver="lbfgs",
         max_iter=2000,
         class_weight=None,
-        random_state=RANDOM_STATE
+        random_state=RANDOM_STATE,
     )
     blender.fit(Z_oof, y_tr, sample_weight=w_tr)
 
-    # refit base models on full outer-train (so test uses fully-trained heads)
-    txt_pos_w = (y_tr == 0).sum() / max(1, (y_tr == 1).sum())
+    # --- refit base models on full outer-train for final outer-test predictions ---
+    pos_full = int((y_tr == 1).sum())
+    neg_full = int((y_tr == 0).sum())
+    txt_pos_w = neg_full / max(1, pos_full)
 
-    text_clf = CatBoostClassifier(
-        iterations=700, depth=6, learning_rate=0.05,
-        loss_function="Logloss", random_seed=RANDOM_STATE,
-        class_weights=[1.0, txt_pos_w], verbose=False
-    )
-    aud_clf = RandomForestClassifier(
-        n_estimators=500, n_jobs=-1,
-        class_weight="balanced_subsample",
-        random_state=RANDOM_STATE
-    )
+    text_clf = make_text_model(pos_weight=txt_pos_w, seed=RANDOM_STATE)
+    aud_clf  = make_audio_model(seed=RANDOM_STATE)
 
     text_clf.fit(Xtxt_tr, y_tr, sample_weight=w_tr)
     aud_clf.fit(Xaud_tr, y_tr, sample_weight=w_tr)
 
-    # now predict OUTER TEST
-    p_txt = text_clf.predict_proba(X_txt[te])[:, 1]
-    p_aud = aud_clf.predict_proba(X_aud[te])[:, 1]
+    # --- predict outer-test ---
+    p_txt = text_clf.predict_proba(Xtxt_te)[:, 1]
+    p_aud = aud_clf.predict_proba(Xaud_te)[:, 1]
     Z_te  = np.column_stack([p_txt, p_aud])
 
     p_fus = blender.predict_proba(Z_te)[:, 1]
-    y_fus = p_fus >= 0.15
 
-    # --- metrics ---
-    auc_t.append(roc_auc_score(y[te], p_txt))
-    auc_a.append(roc_auc_score(y[te], p_aud))
-    auc_f.append(roc_auc_score(y[te], p_fus))
+    # --- metrics (guard for single-class test fold) ---
+    if len(np.unique(y_te)) < 2:
+        # AUC undefined if only one class in y_te
+        auc_t.append(np.nan)
+        auc_a.append(np.nan)
+        auc_f.append(np.nan)
+        print(f"[fold {fold}] Warning: y_te has one class; skipping AUC for this fold.")
+    else:
+        auc_t.append(roc_auc_score(y_te, p_txt))
+        auc_a.append(roc_auc_score(y_te, p_aud))
+        auc_f.append(roc_auc_score(y_te, p_fus))
 
-    # raw counts
+    # raw counts with your thresholds
     pred_map = {
-    "Text":  (p_txt, 0.5),
-    "Audio": (p_aud, 0.5),
-    "Fusion": (p_fus, 0.15),
+        "Text":  (p_txt, 0.5),
+        "Audio": (p_aud, 0.5),
+        "Fusion": (p_fus, 0.15),
     }
 
     for mod, (p, thr) in pred_map.items():
         y_pred = (p >= thr)
-        raw[mod]["tp"] += int(((y_pred == 1) & (y[te] == 1)).sum())
-        raw[mod]["tn"] += int(((y_pred == 0) & (y[te] == 0)).sum())
-        raw[mod]["fp"] += int(((y_pred == 1) & (y[te] == 0)).sum())
-        raw[mod]["fn"] += int(((y_pred == 0) & (y[te] == 1)).sum())
+        raw[mod]["tp"] += int(((y_pred == 1) & (y_te == 1)).sum())
+        raw[mod]["tn"] += int(((y_pred == 0) & (y_te == 0)).sum())
+        raw[mod]["fp"] += int(((y_pred == 1) & (y_te == 0)).sum())
+        raw[mod]["fn"] += int(((y_pred == 0) & (y_te == 1)).sum())
 
-
-    all_y.append(y[te])
+    all_y.append(y_te)
     all_p_txt.append(p_txt)
     all_p_aud.append(p_aud)
     all_p_fus.append(p_fus)
