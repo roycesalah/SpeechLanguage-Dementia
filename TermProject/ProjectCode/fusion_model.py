@@ -203,7 +203,7 @@ for tr, te in cv.split(X_txt, y, groups):
     Z_te  = np.column_stack([p_txt, p_aud])
 
     p_fus = blender.predict_proba(Z_te)[:, 1]
-    y_fus = p_fus >= 0.15  # (keep for now, but consider making consistent)
+    y_fus = p_fus >= 0.15
 
     # --- metrics ---
     auc_t.append(roc_auc_score(y[te], p_txt))

@@ -8,31 +8,37 @@ import spacy
 from sentence_transformers import SentenceTransformer
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-# ── existing descriptive comment unchanged ────────────────────────────────────
-# sem_drift …
-# pronoun_ratio …
-# ──────────────────────────────────────────────────────────────────────────────
-
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 sbert = SentenceTransformer("all-MiniLM-L6-v2", device=DEVICE)
 
 _tok  = AutoTokenizer.from_pretrained("gpt2")
-_gpt2 = AutoModelForCausalLM.from_pretrained(
-            "gpt2",
-            torch_dtype=torch.float16 if DEVICE == "cuda" else torch.float32
-        ).to(DEVICE).eval()
+_gpt2 = AutoModelForCausalLM.from_pretrained("gpt2",
+                                             torch_dtype=torch.float16 if DEVICE == "cuda" else torch.float32
+                                             ).to(DEVICE).eval()
 
 NLP = spacy.load("en_core_web_sm", disable=["ner"])
 
-# ── helper fns (unchanged) ────────────────────────────────────────────────────
-def split_sent(text: str):
-    return [s.strip() for s in text.split(".") if s.strip()]
+# helper functions
+if (
+    "parser" not in NLP.pipe_names
+    and "senter" not in NLP.pipe_names
+    and "sentencizer" not in NLP.pipe_names
+):
+    NLP.add_pipe("sentencizer")
+
+def split_sent(doc: "spacy.tokens.Doc"):
+    try:
+        sents = [s.text.strip() for s in doc.sents if s.text and s.text.strip()]
+    except Exception:
+        sents = []
+    return sents
 
 def sem_drift(vecs: np.ndarray) -> float:
     if len(vecs) < 2: return 0.0
     norms = np.linalg.norm(vecs, axis=1)
     cos   = np.sum(vecs[:-1] * vecs[1:], axis=1) / (norms[:-1] * norms[1:])
+
     return float(np.mean(1 - cos))
 
 @torch.no_grad()
@@ -41,6 +47,7 @@ def lex_entropy(text: str, max_len=512) -> float:
     if ids.input_ids.shape[1] < 3: return 0.0
     logits = _gpt2(**ids).logits[:, :-1]
     probs  = torch.softmax(logits.float(), dim=-1).clamp_(min=1e-8)
+
     return float((-probs * torch.log2(probs)).sum(-1).mean().item())
 
 def mattr(tokens, window=50):
@@ -54,17 +61,17 @@ def mattr(tokens, window=50):
             uniq[prev] -= 1
             if uniq[prev] == 0: del uniq[prev]
         if i >= window-1: scores.append(len(uniq)/window)
+        
     return float(np.mean(scores))
-# ──────────────────────────────────────────────────────────────────────────────
 
 rows = []
 for txt_path in tqdm(Path("data").glob("*/**/*.txt"), unit="clip"):
     raw = txt_path.read_text(encoding="utf-8", errors="ignore")[:30_000]
 
     doc    = NLP(raw)
-    tokens = [t.text.lower() for t in doc if not t.is_space]
+    tokens = [t.text.lower() for t in doc if t.is_punct == False and t.is_alpha and not t.is_space]
 
-    # classic lexical metrics (unchanged)
+    # classic lexical metrics
     ttr_val   = len(set(tokens))/len(tokens) if tokens else 0.0
     mattr_val = mattr(tokens)
     sent_lens = [len([t for t in sent if not t.is_space]) for sent in doc.sents]
@@ -76,14 +83,14 @@ for txt_path in tqdm(Path("data").glob("*/**/*.txt"), unit="clip"):
     # SBERT sentence vectors
     sentences = split_sent(raw)
     if sentences:
-        vecs         = sbert.encode(sentences, convert_to_numpy=True)
-        drift_val    = sem_drift(vecs)
-        doc_emb_full = vecs.mean(axis=0)           # 384-dim pooled embedding
+        vecs = sbert.encode(sentences, convert_to_numpy=True)
+        drift_val = sem_drift(vecs)
+        doc_emb_full = vecs.mean(axis=0)  # 384-dim pooled embedding
     else:
-        drift_val    = 0.0
+        drift_val = 0.0
         doc_emb_full = np.zeros(sbert.get_sentence_embedding_dimension())
 
-    # keep first 50 dims to stay compact
+    # keep first 50 dims for compaction
     doc_emb_50 = doc_emb_full[:50]
 
     entropy_val = lex_entropy(raw)
@@ -97,9 +104,8 @@ for txt_path in tqdm(Path("data").glob("*/**/*.txt"), unit="clip"):
         "mean_sentence_len": mean_sent_len,
         "pronoun_ratio"    : pronoun_ratio,
     }
-    # append SBERT dims
     for i, val in enumerate(doc_emb_50):
-        row[f"sbert_{i}"] = float(val)
+        row[f"sbert_{i}"] = float(val)  # SBERT append
 
     rows.append(row)
 
