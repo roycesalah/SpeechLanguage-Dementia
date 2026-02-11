@@ -1,14 +1,9 @@
 #!/usr/bin/env python
+
 """
-fusion_model.py — speaker-level CV with CatBoost audio head
-==========================================================
-Implements:
-* clip filters, speaker aggregation, time-to-Dx weights
-* Text head  = CatBoostClassifier (replacing original LogisticRegression)
-* Audio head = RandomForestClassifier (optionally CatBoost)
-* Fusion     = MLP (2‑prob inputs)
-* Adds: **feature-importance tables** for the 10 most predictive lexical and audio features
-* Raw counts + ROC / calibration plots
+The following is the initial implementation of the pipeline infrastructure with full
+fusion, analysis, loading, and plotting. Files eval_harness.py, experiments.py, and results.py run
+alternate tests to the below pipeline.
 """
 
 import re
@@ -25,7 +20,7 @@ from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 from sklearn.calibration import calibration_curve
 
-# ---------------- Definitions ---------------- # 
+# Definitions
 def make_text_model(pos_weight, seed):
     return CatBoostClassifier(
         iterations=700, depth=6, learning_rate=0.05,
@@ -40,14 +35,14 @@ def make_audio_model(seed):
         random_state=seed
     )
 
-# ---------------- Hyper‑parameters ---------------- #
+# Hyperparameters
 K_FOLDS      = 10
 RANDOM_STATE = 50
-TAU_YEARS    = 5.0     # decay for sample weights
-MIN_SECONDS  = 5.0     # voiced speech seconds filter
-MIN_WPM      = 40.0    # speaking‑rate filter
-TOPN_FEATS   = 20      # number of top features to display per modality
-# -------------------------------------------------- #
+TAU_YEARS    = 5.0  # sample weight decay
+MIN_SECONDS  = 5.0  # min tot seconds spoken
+MIN_WPM      = 40.0  # filter for speech rate
+TOPN_FEATS   = 20  # tot number of top features to display per modality
+
 
 ROOT      = Path(__file__).resolve().parents[0]
 TEXT_CSV  = ROOT / "text_features_lexical.csv"
@@ -86,11 +81,13 @@ qual_mask = (df.voiced_sec >= MIN_SECONDS) & (df.wpm >= MIN_WPM)
 df = df[qual_mask].reset_index(drop=True)
 print(f"After quality filter: {df.shape[0]} clips")
 
-# ------------------ Clip level rows --------------- #
+# ------------------------------------------------ #
+# Clip-level rows
+# ------------------------------------------------ #
 text_cols = [c for c in text_df.columns if c != "clip_id" and c in df.columns]
 audio_cols = [c for c in audio_df.columns if c not in ["clip_id", "voiced_sec", "wpm"] and c in df.columns]
 
-# Optional sanity check: ensure we have clip-level rows
+# verification for clip-level rows
 print(f"Clip-level rows: {df.shape[0]}")
 print(f"Unique speakers: {df['speaker'].nunique()}")
 
@@ -99,24 +96,27 @@ X_txt = df[text_cols].to_numpy()
 X_aud = df[audio_cols].to_numpy()
 y = df["label"].to_numpy().astype(int)
 
-# ensuring that groups must align with clip rows (speaker id per clip)
+# make sure that groups must align with clip rows (speaker id per clip)
 groups = df["speaker"].to_numpy()
 
-# weights: exp(-years/TAU); controls should be ~1.0
-# If years_pre_dx is NaN (controls), set weight = 1.0
+# weights: exp(-years/TAU) NOTE: controls should be ~1.0
+# Set years_pre_dx weight to 1.0 if NaN (controls)
 years = df["years_pre_dx"].to_numpy()
 years_safe = np.where(np.isfinite(years), years, 0.0)
 weights = np.exp(-years_safe / TAU_YEARS).astype(float)
 
-# ---------------- CV + Metrics -------------------- #
-
+# ------------------------------------------------ #
+# Cross-validation and metrics
+# ------------------------------------------------ #
 # Outer CV: group-aware by speaker (modification for clip level rows)
 n_groups = len(np.unique(groups))
 outer_splits = min(K_FOLDS, n_groups)
 if outer_splits < 2:
     raise ValueError(f"Not enough unique speakers for CV (found {n_groups}).")
 
-outer_cv = GroupKFold(n_splits=outer_splits)
+outer_cv = StratifiedGroupKFold(n_splits=outer_splits,
+                                shuffle=True,
+                                random_state=RANDOM_STATE)
 
 auc_t, auc_a, auc_f = [], [], []
 raw = {m: dict(tp=0, tn=0, fp=0, fn=0) for m in ["Text", "Audio", "Fusion"]}
@@ -134,7 +134,7 @@ for fold, (tr, te) in enumerate(outer_cv.split(X_txt, y, groups=groups), 1):
     Xtxt_te, Xaud_te = X_txt[te], X_aud[te]
     y_te = y[te]
 
-    # --- build OOF preds on outer-train, using group-safe inner CV ---
+    # OOF preds on outer-train using inner
     n_groups_tr = len(np.unique(g_tr))
     inner_splits = min(5, n_groups_tr)
     if inner_splits < 2:
@@ -169,7 +169,7 @@ for fold, (tr, te) in enumerate(outer_cv.split(X_txt, y, groups=groups), 1):
 
     Z_oof = np.column_stack([oof_txt, oof_aud])
 
-    # --- fit blender on OOF preds (outer-train only) ---
+    # blender fit on OOF preds (outer only)
     blender = LogisticRegression(
         solver="lbfgs",
         max_iter=2000,
@@ -178,7 +178,7 @@ for fold, (tr, te) in enumerate(outer_cv.split(X_txt, y, groups=groups), 1):
     )
     blender.fit(Z_oof, y_tr, sample_weight=w_tr)
 
-    # --- refit base models on full outer-train for final outer-test predictions ---
+    # refit base models on full outer-train for final outer-test predictions
     pos_full = int((y_tr == 1).sum())
     neg_full = int((y_tr == 0).sum())
     txt_pos_w = neg_full / max(1, pos_full)
@@ -189,20 +189,20 @@ for fold, (tr, te) in enumerate(outer_cv.split(X_txt, y, groups=groups), 1):
     text_clf.fit(Xtxt_tr, y_tr, sample_weight=w_tr)
     aud_clf.fit(Xaud_tr, y_tr, sample_weight=w_tr)
 
-    # --- predict outer-test ---
+    # outer-test prediction
     p_txt = text_clf.predict_proba(Xtxt_te)[:, 1]
     p_aud = aud_clf.predict_proba(Xaud_te)[:, 1]
     Z_te  = np.column_stack([p_txt, p_aud])
 
     p_fus = blender.predict_proba(Z_te)[:, 1]
 
-    # --- metrics (guard for single-class test fold) ---
+    # metrics (guard for single-class test fold)
     if len(np.unique(y_te)) < 2:
         # AUC undefined if only one class in y_te
         auc_t.append(np.nan)
         auc_a.append(np.nan)
         auc_f.append(np.nan)
-        print(f"[fold {fold}] Warning: y_te has one class; skipping AUC for this fold.")
+        print(f"[fold {fold}] has only one class, skipping AUC")
     else:
         auc_t.append(roc_auc_score(y_te, p_txt))
         auc_a.append(roc_auc_score(y_te, p_aud))
@@ -227,11 +227,13 @@ for fold, (tr, te) in enumerate(outer_cv.split(X_txt, y, groups=groups), 1):
     all_p_aud.append(p_aud)
     all_p_fus.append(p_fus)
 
-# ---------------- Summary ------------------------- #
-print("\n===== 10-fold CV (speaker-level) =====")
-print(f"Text-only  : AUC {np.mean(auc_t):.3f} ± {np.std(auc_t):.3f}")
-print(f"Audio-only : AUC {np.mean(auc_a):.3f} ± {np.std(auc_a):.3f}")
-print(f"Fusion MLP : AUC {np.mean(auc_f):.3f} ± {np.std(auc_f):.3f}")
+# ------------------------------------------------ #
+# Summary
+# ------------------------------------------------ #
+print("\n===== clip level, speaker groupings (speaker-level) =====")
+print(f"Text-only  : AUC {np.nanmean(auc_t):.3f} ± {np.nanstd(auc_t):.3f}")
+print(f"Audio-only : AUC {np.nanmean(auc_a):.3f} ± {np.nanstd(auc_a):.3f}")
+print(f"Fusion MLP : AUC {np.nanmean(auc_f):.3f} ± {np.nanstd(auc_f):.3f}")
 
 rows = [
     [m, d["tp"] + d["fn"], d["tn"] + d["fp"], d["tp"] + d["tn"], d["fp"] + d["fn"]]
@@ -240,13 +242,13 @@ rows = [
 print("\n===== Raw prediction counts (pooled folds) =====")
 print(pd.DataFrame(rows, columns=["Modality", "# Dementia", "# Control", "Correct", "Incorrect"]).to_string(index=False))
 
-# ----- F1 from pooled counts (threshold = 0.5) -----
+# F1 from pooled counts (threshold = 0.5)
 f1_rows = []
 for m, d in raw.items():
     tp, tn, fp, fn = d["tp"], d["tn"], d["fp"], d["fn"]
     denom_pos = 2*tp + fp + fn
     f1_pos = 0.0 if denom_pos == 0 else (2*tp) / denom_pos
-    # (optional) F1 for the negative class:
+    # F1 for the negative class:
     denom_neg = 2*tn + fn + fp
     f1_neg = 0.0 if denom_neg == 0 else (2*tn) / denom_neg
     f1_rows.append([m, f1_pos, f1_neg])
@@ -254,7 +256,9 @@ for m, d in raw.items():
 print("\n===== F1 (from pooled counts) =====")
 print(pd.DataFrame(f1_rows, columns=["Modality", "F1(+)", "F1(-)"]).round(3).to_string(index=False))
 
-# ---------------- Feature Importance -------------- #
+# ------------------------------------------------ #
+# Feature importance
+# ------------------------------------------------ #
 print("\n===== Top predictive features =====")
 
 full_txt_pos_w = (y == 0).sum() / (y == 1).sum()
@@ -289,8 +293,9 @@ def show_top_features(model, feature_names, title, topn=20):
 show_top_features(final_text_clf, text_cols, "Lexical (CatBoost)", TOPN_FEATS)
 show_top_features(final_audio_clf, audio_cols, "Acoustic (RandomForest)", TOPN_FEATS)
 
-
-# ---------------- ROC + Calibration -------------- #
+# ------------------------------------------------ #
+# ROC + Calibration
+# ------------------------------------------------ #
 all_y      = np.concatenate(all_y)
 all_p_txt  = np.concatenate(all_p_txt)
 all_p_aud  = np.concatenate(all_p_aud)

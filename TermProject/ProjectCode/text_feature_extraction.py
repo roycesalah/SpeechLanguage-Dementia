@@ -68,7 +68,7 @@ rows = []
 for txt_path in tqdm(Path("data").glob("*/**/*.txt"), unit="clip"):
     raw = txt_path.read_text(encoding="utf-8", errors="ignore")[:30_000]
 
-    doc    = NLP(raw)
+    doc = NLP(raw)
     tokens = [t.text.lower() for t in doc if t.is_punct == False and t.is_alpha and not t.is_space]
 
     # classic lexical metrics
@@ -78,10 +78,10 @@ for txt_path in tqdm(Path("data").glob("*/**/*.txt"), unit="clip"):
     mean_sent_len = float(np.mean(sent_lens)) if sent_lens else 0.0
     pron  = sum(1 for t in doc if t.pos_ == "PRON")
     nouns = sum(1 for t in doc if t.pos_ in ("NOUN", "PROPN"))
-    pronoun_ratio = pron/(pron+nouns) if (pron+nouns) else 0.0
+    pronoun_ratio = pron / (pron+nouns) if (pron+nouns) else 0.0
 
     # SBERT sentence vectors
-    sentences = split_sent(raw)
+    sentences = split_sent(doc)
     if sentences:
         vecs = sbert.encode(sentences, convert_to_numpy=True)
         drift_val = sem_drift(vecs)
@@ -96,13 +96,13 @@ for txt_path in tqdm(Path("data").glob("*/**/*.txt"), unit="clip"):
     entropy_val = lex_entropy(raw)
 
     row = {
-        "clip_id"          : txt_path.with_suffix(".wav").as_posix(),
-        "sem_drift"        : drift_val,
-        "lex_entropy"      : entropy_val,
-        "ttr"              : ttr_val,
-        "mattr"            : mattr_val,
+        "clip_id": txt_path.with_suffix(".wav").as_posix(),
+        "sem_drift": drift_val,
+        "lex_entropy": entropy_val,
+        "ttr": ttr_val,
+        "mattr": mattr_val,
         "mean_sentence_len": mean_sent_len,
-        "pronoun_ratio"    : pronoun_ratio,
+        "pronoun_ratio": pronoun_ratio
     }
     for i, val in enumerate(doc_emb_50):
         row[f"sbert_{i}"] = float(val)  # SBERT append

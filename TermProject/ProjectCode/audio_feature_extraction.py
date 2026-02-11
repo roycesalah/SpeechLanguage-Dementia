@@ -2,23 +2,12 @@
 from __future__ import annotations
 import os
 from pathlib import Path
-
 import librosa
 import numpy as np
 import opensmile
 import pandas as pd
 from tqdm import tqdm
 
-
-"""
-eGeMAPS functional features
-n_sil        =    # pauses ≥ 0.2 s
-mean_sil     =    mean pause duration (s)
-silence_pct  =    fraction of clip that is silent
-voiced_sec   =    total voiced speech seconds
-wpm          =    words per minute (transcript‑based if possible)
-clip_id      =    wav path (relative)
-"""
 
 smile = opensmile.Smile(
     feature_set=opensmile.FeatureSet.eGeMAPSv02,
@@ -92,7 +81,7 @@ for wav in tqdm(wav_files, desc="audio", unit="clip"):
         rows.append(feats)
 
     except Exception as e:
-        print("ERR:", wav, "->", e)
+        print("ERR:", wav, e)
 
 
 df = pd.DataFrame(rows)
