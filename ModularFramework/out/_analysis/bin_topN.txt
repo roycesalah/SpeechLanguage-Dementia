@@ -1,0 +1,104 @@
+
+=== BIN (0.0,5.0] (top 30) ===
+                          run             experiment_id head  mean_auc  std_auc  mean_sens_at_fpr  folds  n_pos_total  n_neg_total
+     table3_core_targetSens80            late_fusion_lr  txt    0.6776   0.0949            0.2913      5           45          324
+     table3_core_targetSens80                   text_lr  txt    0.6776   0.0949            0.2913      5           45          324
+             text_ablation_lr  text_lr_traditional_only  txt    0.6734   0.1077            0.2782      5           45          324
+             text_ablation_lr        text_lr_no_entropy  txt    0.6611   0.1050            0.2274      5           45          324
+             text_ablation_lr          text_lr_no_drift  txt    0.6560   0.1012            0.2496      5           45          324
+     table3_core_targetSens80            late_fusion_lr  fus    0.6525   0.0548            0.2460      5           45          324
+     table3_core_targetSens80              text_svm_cal  txt    0.6199   0.0780            0.2496      5           45          324
+             text_ablation_lr        text_lr_novel_only  txt    0.6104   0.0740            0.2357      5           45          324
+     table3_core_targetSens80           early_fusion_lr  fus    0.5995   0.0264            0.2210      5           45          324
+          exp19_text_catboost        text_catboost_cfg1  txt    0.5977   0.1470            0.0983     10           45          324
+      text_classifier_compare        text_catboost_cfg1  txt    0.5977   0.1470            0.0983     10           45          324
+     table3_core_targetSens80             audio_core_lr  aud    0.5901   0.0778            0.2579      5           45          324
+     table3_core_targetSens80                  audio_lr  aud    0.5817   0.0453            0.1222      5           45          324
+     table3_core_targetSens80            late_fusion_lr  aud    0.5817   0.0453            0.1222      5           45          324
+exp18_text_classifier_compare                   text_lr  txt    0.5671   0.1937            0.2071     10           45          324
+      text_classifier_compare                   text_lr  txt    0.5671   0.1937            0.2071     10           45          324
+exp18_text_classifier_compare                  text_mlp  txt    0.5631   0.1694            0.1493     10           45          324
+      text_classifier_compare                  text_mlp  txt    0.5631   0.1694            0.1493     10           45          324
+exp18_text_classifier_compare              text_svm_cal  txt    0.5547   0.1981            0.2071     10           45          324
+      text_classifier_compare              text_svm_cal  txt    0.5547   0.1981            0.2071     10           45          324
+  table5_audio_dimensionality early_fusion_audio_pca_lr  fus    0.5513   0.2001            0.1705     10           45          324
+  table5_audio_dimensionality                  audio_lr  aud    0.5463   0.1766            0.1762     10           45          324
+  table5_audio_dimensionality             audio_core_lr  aud    0.5023   0.1520            0.1395     10           45          324
+
+=== BIN (10.0,15.0] (top 30) ===
+                          run             experiment_id head  mean_auc  std_auc  mean_sens_at_fpr  folds  n_pos_total  n_neg_total
+             text_ablation_lr        text_lr_novel_only  txt    0.5696   0.0906            0.0750      5           27          324
+     table3_core_targetSens80           early_fusion_lr  fus    0.5622   0.1984            0.1400      5           27          324
+     table3_core_targetSens80                  audio_lr  aud    0.5464   0.2004            0.2150      5           27          324
+     table3_core_targetSens80            late_fusion_lr  aud    0.5464   0.2004            0.2150      5           27          324
+  table5_audio_dimensionality early_fusion_audio_pca_lr  fus    0.5384   0.1373            0.2333      9           27          291
+exp18_text_classifier_compare                  text_mlp  txt    0.5352   0.1915            0.2074      9           27          291
+      text_classifier_compare                  text_mlp  txt    0.5352   0.1915            0.2074      9           27          291
+  table5_audio_dimensionality                  audio_lr  aud    0.5337   0.1710            0.1630      9           27          291
+exp18_text_classifier_compare                   text_lr  txt    0.5062   0.1308            0.1519      9           27          291
+      text_classifier_compare                   text_lr  txt    0.5062   0.1308            0.1519      9           27          291
+exp18_text_classifier_compare              text_svm_cal  txt    0.4996   0.1313            0.1519      9           27          291
+      text_classifier_compare              text_svm_cal  txt    0.4996   0.1313            0.1519      9           27          291
+     table3_core_targetSens80            late_fusion_lr  txt    0.4872   0.1128            0.0786      5           27          324
+     table3_core_targetSens80                   text_lr  txt    0.4872   0.1128            0.0786      5           27          324
+             text_ablation_lr          text_lr_no_drift  txt    0.4847   0.1159            0.0786      5           27          324
+             text_ablation_lr  text_lr_traditional_only  txt    0.4787   0.1111            0.1071      5           27          324
+             text_ablation_lr        text_lr_no_entropy  txt    0.4765   0.0967            0.0571      5           27          324
+          exp19_text_catboost        text_catboost_cfg1  txt    0.4720   0.1772            0.0222      9           27          291
+      text_classifier_compare        text_catboost_cfg1  txt    0.4720   0.1772            0.0222      9           27          291
+     table3_core_targetSens80              text_svm_cal  txt    0.4708   0.0797            0.0000      5           27          324
+     table3_core_targetSens80            late_fusion_lr  fus    0.4620   0.1358            0.0750      5           27          324
+  table5_audio_dimensionality             audio_core_lr  aud    0.4490   0.1791            0.0926      9           27          291
+     table3_core_targetSens80             audio_core_lr  aud    0.4312   0.1176            0.1036      5           27          324
+
+=== BIN (5.0,10.0] (top 30) ===
+                          run             experiment_id head  mean_auc  std_auc  mean_sens_at_fpr  folds  n_pos_total  n_neg_total
+          exp19_text_catboost        text_catboost_cfg1  txt    0.6150   0.1697            0.1917     10           32          324
+      text_classifier_compare        text_catboost_cfg1  txt    0.6150   0.1697            0.1917     10           32          324
+     table3_core_targetSens80              text_svm_cal  txt    0.6100   0.1017            0.2524      5           32          324
+exp18_text_classifier_compare                   text_lr  txt    0.6086   0.1869            0.2226     10           32          324
+      text_classifier_compare                   text_lr  txt    0.6086   0.1869            0.2226     10           32          324
+             text_ablation_lr          text_lr_no_drift  txt    0.6071   0.1187            0.2024      5           32          324
+exp18_text_classifier_compare                  text_mlp  txt    0.6029   0.2040            0.2093     10           32          324
+      text_classifier_compare                  text_mlp  txt    0.6029   0.2040            0.2093     10           32          324
+             text_ablation_lr  text_lr_traditional_only  txt    0.5974   0.1222            0.1675      5           32          324
+exp18_text_classifier_compare              text_svm_cal  txt    0.5948   0.1987            0.1593     10           32          324
+      text_classifier_compare              text_svm_cal  txt    0.5948   0.1987            0.1593     10           32          324
+     table3_core_targetSens80           early_fusion_lr  fus    0.5872   0.0949            0.1258      5           32          324
+             text_ablation_lr        text_lr_no_entropy  txt    0.5872   0.0980            0.1452      5           32          324
+     table3_core_targetSens80            late_fusion_lr  txt    0.5851   0.1181            0.2524      5           32          324
+     table3_core_targetSens80                   text_lr  txt    0.5851   0.1181            0.2524      5           32          324
+             text_ablation_lr        text_lr_novel_only  txt    0.5801   0.0841            0.1452      5           32          324
+     table3_core_targetSens80            late_fusion_lr  fus    0.5791   0.1097            0.1008      5           32          324
+  table5_audio_dimensionality                  audio_lr  aud    0.5729   0.2325            0.2202     10           32          324
+  table5_audio_dimensionality early_fusion_audio_pca_lr  fus    0.5630   0.1582            0.1345     10           32          324
+     table3_core_targetSens80                  audio_lr  aud    0.5472   0.0905            0.1758      5           32          324
+     table3_core_targetSens80            late_fusion_lr  aud    0.5472   0.0905            0.1758      5           32          324
+     table3_core_targetSens80             audio_core_lr  aud    0.4744   0.1680            0.0500      5           32          324
+  table5_audio_dimensionality             audio_core_lr  aud    0.4723   0.2219            0.0786     10           32          324
+
+=== BIN =0 (top 30) ===
+                          run             experiment_id head  mean_auc  std_auc  mean_sens_at_fpr  folds  n_pos_total  n_neg_total
+  table5_audio_dimensionality                  audio_lr  aud    0.6892   0.1760            0.3333     10           27          324
+  table5_audio_dimensionality early_fusion_audio_pca_lr  fus    0.6728   0.1756            0.2000     10           27          324
+     table3_core_targetSens80                  audio_lr  aud    0.6402   0.0884            0.3500      5           27          324
+     table3_core_targetSens80            late_fusion_lr  aud    0.6402   0.0884            0.3500      5           27          324
+     table3_core_targetSens80           early_fusion_lr  fus    0.6347   0.0315            0.2417      5           27          324
+     table3_core_targetSens80            late_fusion_lr  fus    0.5837   0.0510            0.1333      5           27          324
+exp18_text_classifier_compare                   text_lr  txt    0.5734   0.2583            0.1500     10           27          324
+      text_classifier_compare                   text_lr  txt    0.5734   0.2583            0.1500     10           27          324
+exp18_text_classifier_compare              text_svm_cal  txt    0.5730   0.2669            0.1250     10           27          324
+      text_classifier_compare              text_svm_cal  txt    0.5730   0.2669            0.1250     10           27          324
+     table3_core_targetSens80             audio_core_lr  aud    0.5631   0.0400            0.1667      5           27          324
+  table5_audio_dimensionality             audio_core_lr  aud    0.5450   0.1740            0.1833     10           27          324
+exp18_text_classifier_compare                  text_mlp  txt    0.5406   0.2430            0.1583     10           27          324
+      text_classifier_compare                  text_mlp  txt    0.5406   0.2430            0.1583     10           27          324
+     table3_core_targetSens80            late_fusion_lr  txt    0.5321   0.0556            0.1083      5           27          324
+     table3_core_targetSens80                   text_lr  txt    0.5321   0.0556            0.1083      5           27          324
+             text_ablation_lr  text_lr_traditional_only  txt    0.5221   0.0275            0.0333      5           27          324
+             text_ablation_lr        text_lr_novel_only  txt    0.5165   0.1829            0.1333      5           27          324
+             text_ablation_lr          text_lr_no_drift  txt    0.5162   0.0420            0.0833      5           27          324
+     table3_core_targetSens80              text_svm_cal  txt    0.5031   0.0687            0.0333      5           27          324
+             text_ablation_lr        text_lr_no_entropy  txt    0.4986   0.0397            0.0333      5           27          324
+          exp19_text_catboost        text_catboost_cfg1  txt    0.4335   0.2243            0.0583     10           27          324
+      text_classifier_compare        text_catboost_cfg1  txt    0.4335   0.2243            0.0583     10           27          324

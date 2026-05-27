@@ -1,0 +1,6 @@
+[exp18_text_classifier_compare] best=text_mlp:speaker:txt mean_auc=0.6132 std_auc=0.1178 mean_f1=0.0604
+[exp19_text_catboost] best=text_catboost_cfg1:clip:txt mean_auc=0.5277 std_auc=0.0886 mean_f1=0.2667
+[table3_core_targetSens80] best=late_fusion_lr:speaker:fus mean_auc=0.6074 std_auc=0.0115 mean_f1=0.5314
+[table5_audio_dimensionality] best=audio_lr:clip:aud mean_auc=0.5751 std_auc=0.0890 mean_f1=0.2917
+[text_ablation_lr] best=text_lr_traditional_only:speaker:txt mean_auc=0.6017 std_auc=0.0924 mean_f1=0.0821
+[text_classifier_compare] best=text_mlp:speaker:txt mean_auc=0.6132 std_auc=0.1178 mean_f1=0.0604

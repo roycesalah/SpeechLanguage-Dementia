@@ -1,0 +1,671 @@
+experiment_id,fold,clip_id,speaker,label,years_pre_dx,p_txt,p_aud,p_fus,modality
+text_catboost_cfg1,1,data/dementia/Alan Ramsey/alanramsey_10.wav,Alan Ramsey,1,10.0,0.11332824543069012,,,clip
+text_catboost_cfg1,1,data/dementia/Andrew Sachs/andrewsachs_10.wav,Andrew Sachs,1,10.0,0.12547949809487843,,,clip
+text_catboost_cfg1,1,data/dementia/Andrew Sachs/andrewsachs_15.wav,Andrew Sachs,1,15.0,0.018121455659543644,,,clip
+text_catboost_cfg1,1,data/nodementia/Anthony Hopkins/AnthonyHopkins_1.wav,Anthony Hopkins,0,,0.007644310300431409,,,clip
+text_catboost_cfg1,1,data/nodementia/Anthony Hopkins/AnthonyHopkins_2.wav,Anthony Hopkins,0,,0.10705175595130689,,,clip
+text_catboost_cfg1,1,data/nodementia/Anthony Hopkins/AnthonyHopkins_3.wav,Anthony Hopkins,0,,0.0003306481713095191,,,clip
+text_catboost_cfg1,1,data/nodementia/Barry Levinson/BarryLevinson_1.wav,Barry Levinson,0,,0.07925255676669499,,,clip
+text_catboost_cfg1,1,data/nodementia/Barry Levinson/BarryLevinson_2.wav,Barry Levinson,0,,0.3159756850424771,,,clip
+text_catboost_cfg1,1,data/nodementia/Barry Levinson/BarryLevinson_3.wav,Barry Levinson,0,,0.012880304716146028,,,clip
+text_catboost_cfg1,1,data/nodementia/Buddy Guy/BuddyGuy_2.wav,Buddy Guy,0,,0.043374764590917,,,clip
+text_catboost_cfg1,1,data/nodementia/Buddy Guy/BuddyGuy_3.wav,Buddy Guy,0,,0.03712328669430568,,,clip
+text_catboost_cfg1,1,data/nodementia/Harrion ford/Harrion ford_1.wav,Harrion ford,0,,0.8447931924641047,,,clip
+text_catboost_cfg1,1,data/nodementia/Harrion ford/Harrion ford_2.wav,Harrion ford,0,,0.9867970271602265,,,clip
+text_catboost_cfg1,1,data/nodementia/Harrion ford/Harrion ford_3.wav,Harrion ford,0,,0.14404889558274317,,,clip
+text_catboost_cfg1,1,data/nodementia/Ian McKellen/IanMcKellen_1.wav,Ian McKellen,0,,0.8372568443367464,,,clip
+text_catboost_cfg1,1,data/nodementia/Ian McKellen/IanMcKellen_2.wav,Ian McKellen,0,,0.00957103956736818,,,clip
+text_catboost_cfg1,1,data/nodementia/Ian McKellen/IanMcKellen_3.wav,Ian McKellen,0,,0.8618535583757595,,,clip
+text_catboost_cfg1,1,data/nodementia/Joan Collins/JoanCollins_1.wav,Joan Collins,0,,0.011441378238905396,,,clip
+text_catboost_cfg1,1,data/nodementia/Joan Collins/JoanCollins_2.wav,Joan Collins,0,,0.018322690376856337,,,clip
+text_catboost_cfg1,1,data/nodementia/Joan Collins/JoanCollins_3.wav,Joan Collins,0,,0.17495901943744893,,,clip
+text_catboost_cfg1,1,data/nodementia/John Cleese/JohnCleese_1.wav,John Cleese,0,,0.4489720688277663,,,clip
+text_catboost_cfg1,1,data/nodementia/John Cleese/JohnCleese_3.wav,John Cleese,0,,0.7369477501345991,,,clip
+text_catboost_cfg1,1,data/nodementia/Johnny Mathis/Johnny Mathis_2.wav,Johnny Mathis,0,,0.5775791347856978,,,clip
+text_catboost_cfg1,1,data/nodementia/Johnny Mathis/JohnnyMathis_3.wav,Johnny Mathis,0,,0.24397707527920365,,,clip
+text_catboost_cfg1,1,data/nodementia/Kirk Douglas/Kirk Douglas_1.wav,Kirk Douglas,0,,0.053073251648397275,,,clip
+text_catboost_cfg1,1,data/nodementia/Kirk Douglas/Kirk Douglas_2.wav,Kirk Douglas,0,,0.16608722233566556,,,clip
+text_catboost_cfg1,1,data/nodementia/Kirk Douglas/Kirk Douglas_3.wav,Kirk Douglas,0,,0.0931641512260649,,,clip
+text_catboost_cfg1,1,data/dementia/Lerone Bennett Jr/LeroneBennettJr_10.wav,Lerone Bennett Jr,1,10.0,0.2961887701118691,,,clip
+text_catboost_cfg1,1,data/dementia/Maurice Hinchey/mauricehinchey_0_1.wav,Maurice Hinchey,1,0.0,0.027968732247415643,,,clip
+text_catboost_cfg1,1,data/dementia/Maurice Hinchey/mauricehinchey_0_2.wav,Maurice Hinchey,1,0.0,0.049295794222251374,,,clip
+text_catboost_cfg1,1,data/dementia/Maurice Hinchey/mauricehinchey_5.wav,Maurice Hinchey,1,5.0,0.6268648588374214,,,clip
+text_catboost_cfg1,1,data/nodementia/Morgen Freeman/Morgen Freeman_1.wav,Morgen Freeman,0,,0.22936745620792195,,,clip
+text_catboost_cfg1,1,data/nodementia/Morgen Freeman/Morgen Freeman_2.wav,Morgen Freeman,0,,0.005051753857645949,,,clip
+text_catboost_cfg1,1,data/nodementia/Morgen Freeman/Morgen Freeman_3.wav,Morgen Freeman,0,,0.015274972118976668,,,clip
+text_catboost_cfg1,1,data/dementia/Paul Hornung/paulhornung_0.wav,Paul Hornung,1,0.0,0.07269545605941401,,,clip
+text_catboost_cfg1,1,data/dementia/Paul Hornung/paulhornung_10.wav,Paul Hornung,1,10.0,0.08090548086137052,,,clip
+text_catboost_cfg1,1,data/nodementia/Paul Verhoeven/PaulVerhoeven_1.wav,Paul Verhoeven,0,,0.015237629674749814,,,clip
+text_catboost_cfg1,1,data/nodementia/Paul Verhoeven/PaulVerhoeven_3.wav,Paul Verhoeven,0,,0.09795752911934168,,,clip
+text_catboost_cfg1,1,data/dementia/Ray Galton/RayGalton_5.wav,Ray Galton,1,5.0,0.20623193575298515,,,clip
+text_catboost_cfg1,1,data/dementia/Ross Mac Donald/RossMacDonald_10.wav,Ross Mac Donald,1,10.0,0.15431127372429929,,,clip
+text_catboost_cfg1,1,data/nodementia/Stan Lee/Stan Lee_1.wav,Stan Lee,0,,0.5174108519173167,,,clip
+text_catboost_cfg1,1,data/nodementia/Stan Lee/Stan Lee_2.wav,Stan Lee,0,,0.3918291724896252,,,clip
+text_catboost_cfg1,1,data/nodementia/Stan Lee/Stan Lee_3.wav,Stan Lee,0,,0.10814392701447202,,,clip
+text_catboost_cfg1,1,data/dementia/Tony Bennett/TonyBennett_0.wav,Tony Bennett,1,0.0,0.0067672256772472435,,,clip
+text_catboost_cfg1,1,data/dementia/Tony Bennett/TonyBennett_15.wav,Tony Bennett,1,15.0,0.18459614826277781,,,clip
+text_catboost_cfg1,1,,Alan Ramsey,1,10.0,0.11332824543069012,,,speaker
+text_catboost_cfg1,1,,Andrew Sachs,1,10.0,0.07180047687721104,,,speaker
+text_catboost_cfg1,1,,Anthony Hopkins,0,,0.03834223814101594,,,speaker
+text_catboost_cfg1,1,,Barry Levinson,0,,0.13603618217510602,,,speaker
+text_catboost_cfg1,1,,Buddy Guy,0,,0.04024902564261134,,,speaker
+text_catboost_cfg1,1,,Harrion ford,0,,0.6585463717356915,,,speaker
+text_catboost_cfg1,1,,Ian McKellen,0,,0.569560480759958,,,speaker
+text_catboost_cfg1,1,,Joan Collins,0,,0.06824102935107022,,,speaker
+text_catboost_cfg1,1,,John Cleese,0,,0.5929599094811827,,,speaker
+text_catboost_cfg1,1,,Johnny Mathis,0,,0.4107781050324507,,,speaker
+text_catboost_cfg1,1,,Kirk Douglas,0,,0.10410820840337591,,,speaker
+text_catboost_cfg1,1,,Lerone Bennett Jr,1,10.0,0.2961887701118691,,,speaker
+text_catboost_cfg1,1,,Maurice Hinchey,1,0.0,0.23470979510236278,,,speaker
+text_catboost_cfg1,1,,Morgen Freeman,0,,0.08323139406151485,,,speaker
+text_catboost_cfg1,1,,Paul Hornung,1,0.0,0.07680046846039226,,,speaker
+text_catboost_cfg1,1,,Paul Verhoeven,0,,0.056597579397045746,,,speaker
+text_catboost_cfg1,1,,Ray Galton,1,5.0,0.20623193575298515,,,speaker
+text_catboost_cfg1,1,,Ross Mac Donald,1,10.0,0.15431127372429929,,,speaker
+text_catboost_cfg1,1,,Stan Lee,0,,0.339127983807138,,,speaker
+text_catboost_cfg1,1,,Tony Bennett,1,0.0,0.09568168697001253,,,speaker
+text_catboost_cfg1,2,data/dementia/Antony Flew/antonyflew_10.wav,Antony Flew,1,10.0,0.5436873758935602,,,clip
+text_catboost_cfg1,2,data/dementia/Antony Flew/antonyflew_5_1.wav,Antony Flew,1,5.0,0.3812068041670589,,,clip
+text_catboost_cfg1,2,data/dementia/Antony Flew/antonyflew_5_2.wav,Antony Flew,1,5.0,0.7237929778993095,,,clip
+text_catboost_cfg1,2,data/nodementia/Barbra Streisand/BarbraStreisand_1.wav,Barbra Streisand,0,,0.7706676383808242,,,clip
+text_catboost_cfg1,2,data/nodementia/Barbra Streisand/BarbraStreisand_2.wav,Barbra Streisand,0,,0.09812260963947261,,,clip
+text_catboost_cfg1,2,data/nodementia/Barbra Streisand/BarbraStreisand_3.wav,Barbra Streisand,0,,0.4814456486208951,,,clip
+text_catboost_cfg1,2,data/dementia/Charles K Kao/CharlesKKao_0.wav,Charles K Kao,1,0.0,0.8326491829824033,,,clip
+text_catboost_cfg1,2,data/nodementia/Cliff Richard/CliffRichard_1.wav,Cliff Richard,0,,0.02180948998284593,,,clip
+text_catboost_cfg1,2,data/nodementia/Cliff Richard/CliffRichard_2.wav,Cliff Richard,0,,0.11957747644186709,,,clip
+text_catboost_cfg1,2,data/nodementia/Cliff Richard/CliffRichard_3.wav,Cliff Richard,0,,0.171421534867389,,,clip
+text_catboost_cfg1,2,data/nodementia/David McCallum/DavidMcCallum_1.wav,David McCallum,0,,0.009089654038410253,,,clip
+text_catboost_cfg1,2,data/nodementia/David McCallum/DavidMcCallum_3.wav,David McCallum,0,,0.09897374536294017,,,clip
+text_catboost_cfg1,2,data/nodementia/Dick van Dyke/dick van dyke_1.wav,Dick van Dyke,0,,0.27960223385583555,,,clip
+text_catboost_cfg1,2,data/nodementia/Dick van Dyke/dick van dyke_3.wav,Dick van Dyke,0,,0.03590550370971992,,,clip
+text_catboost_cfg1,2,data/dementia/Estelle Getty/EstelleGetty_15.wav,Estelle Getty,1,15.0,0.5823121506574148,,,clip
+text_catboost_cfg1,2,data/nodementia/Gene Hackman/GeneHackman_1.wav,Gene Hackman,0,,0.010326689334704873,,,clip
+text_catboost_cfg1,2,data/nodementia/Gene Hackman/GeneHackman_2.wav,Gene Hackman,0,,0.0029983051805161885,,,clip
+text_catboost_cfg1,2,data/nodementia/Gene Hackman/GeneHackman_3.wav,Gene Hackman,0,,0.26929635286583575,,,clip
+text_catboost_cfg1,2,data/nodementia/Hank Aaron/HankAaron_1.wav,Hank Aaron,0,,0.10630130336054862,,,clip
+text_catboost_cfg1,2,data/nodementia/Hank Aaron/HankAaron_2.wav,Hank Aaron,0,,0.05053836096606086,,,clip
+text_catboost_cfg1,2,data/nodementia/Hank Aaron/HankAaron_3.wav,Hank Aaron,0,,0.004118448424270581,,,clip
+text_catboost_cfg1,2,data/nodementia/Jeanne Moreau/JeanneMoreau_1.wav,Jeanne Moreau,0,,0.004542803306925013,,,clip
+text_catboost_cfg1,2,data/nodementia/Jeanne Moreau/JeanneMoreau_3.wav,Jeanne Moreau,0,,0.05806501501839619,,,clip
+text_catboost_cfg1,2,data/nodementia/Linda Evans/LindaEvans_1.wav,Linda Evans,0,,0.7274050098180936,,,clip
+text_catboost_cfg1,2,data/nodementia/Linda Evans/LindaEvans_2.wav,Linda Evans,0,,0.0008775795754809535,,,clip
+text_catboost_cfg1,2,data/nodementia/Linda Evans/LindaEvans_3.wav,Linda Evans,0,,0.010617133929719295,,,clip
+text_catboost_cfg1,2,data/nodementia/Mel brooks/Mel brooks_1.wav,Mel brooks,0,,0.0021108750933298047,,,clip
+text_catboost_cfg1,2,data/nodementia/Mel brooks/Mel brooks_2.wav,Mel brooks,0,,0.20282373749890303,,,clip
+text_catboost_cfg1,2,data/nodementia/Mel brooks/Mel brooks_3.wav,Mel brooks,0,,0.07927006175069325,,,clip
+text_catboost_cfg1,2,data/nodementia/Patrick Stewart/Patrick Stewart_1.wav,Patrick Stewart,0,,0.27844463506603206,,,clip
+text_catboost_cfg1,2,data/nodementia/Patrick Stewart/Patrick Stewart_2.wav,Patrick Stewart,0,,0.9943739741286494,,,clip
+text_catboost_cfg1,2,data/nodementia/Patrick Stewart/Patrick Stewart_3.wav,Patrick Stewart,0,,0.36245890712261275,,,clip
+text_catboost_cfg1,2,data/dementia/Peter Falk/PeterFalk_10.wav,Peter Falk,1,10.0,0.12292240413633339,,,clip
+text_catboost_cfg1,2,data/dementia/Peter Falk/PeterFalk_15.wav,Peter Falk,1,15.0,0.010748502231715786,,,clip
+text_catboost_cfg1,2,data/dementia/Richard Gwyn/RichardGwyn_0.wav,Richard Gwyn,1,0.0,0.5544565847641395,,,clip
+text_catboost_cfg1,2,data/dementia/Richard Gwyn/RichardGwyn_5.wav,Richard Gwyn,1,5.0,0.9641956504916017,,,clip
+text_catboost_cfg1,2,data/nodementia/Ridley Scott/RidleyScott_1.wav,Ridley Scott,0,,0.014664920650556258,,,clip
+text_catboost_cfg1,2,data/nodementia/Ridley Scott/RidleyScott_2.wav,Ridley Scott,0,,0.7996041528130311,,,clip
+text_catboost_cfg1,2,data/nodementia/Ridley Scott/RidleyScott_3.wav,Ridley Scott,0,,0.04864061301021508,,,clip
+text_catboost_cfg1,2,data/nodementia/Robert Wagner/RobertWagner_2.wav,Robert Wagner,0,,0.9744374223600415,,,clip
+text_catboost_cfg1,2,data/nodementia/Robert Wagner/RobertWagner_3.wav,Robert Wagner,0,,0.0002781501155818217,,,clip
+text_catboost_cfg1,2,data/dementia/Ted Turner/TedTurner_0.wav,Ted Turner,1,0.0,0.0016987606862166672,,,clip
+text_catboost_cfg1,2,data/dementia/Ted Turner/TedTurner_5.wav,Ted Turner,1,5.0,0.651021486542908,,,clip
+text_catboost_cfg1,2,data/dementia/Trevor Peacock/TrevorPeacock_5.wav,Trevor Peacock,1,5.0,0.5616614552742984,,,clip
+text_catboost_cfg1,2,data/dementia/Woody Durham/woodydurham_0_2.wav,Woody Durham,1,0.0,0.02363298947726306,,,clip
+text_catboost_cfg1,2,,Antony Flew,1,5.0,0.5495623859866429,,,speaker
+text_catboost_cfg1,2,,Barbra Streisand,0,,0.4500786322137307,,,speaker
+text_catboost_cfg1,2,,Charles K Kao,1,0.0,0.8326491829824033,,,speaker
+text_catboost_cfg1,2,,Cliff Richard,0,,0.10426950043070067,,,speaker
+text_catboost_cfg1,2,,David McCallum,0,,0.05403169970067521,,,speaker
+text_catboost_cfg1,2,,Dick van Dyke,0,,0.15775386878277772,,,speaker
+text_catboost_cfg1,2,,Estelle Getty,1,15.0,0.5823121506574148,,,speaker
+text_catboost_cfg1,2,,Gene Hackman,0,,0.09420711579368561,,,speaker
+text_catboost_cfg1,2,,Hank Aaron,0,,0.05365270425029336,,,speaker
+text_catboost_cfg1,2,,Jeanne Moreau,0,,0.031303909162660605,,,speaker
+text_catboost_cfg1,2,,Linda Evans,0,,0.2462999077744313,,,speaker
+text_catboost_cfg1,2,,Mel brooks,0,,0.09473489144764202,,,speaker
+text_catboost_cfg1,2,,Patrick Stewart,0,,0.545092505439098,,,speaker
+text_catboost_cfg1,2,,Peter Falk,1,10.0,0.06683545318402459,,,speaker
+text_catboost_cfg1,2,,Richard Gwyn,1,0.0,0.7593261176278706,,,speaker
+text_catboost_cfg1,2,,Ridley Scott,0,,0.28763656215793415,,,speaker
+text_catboost_cfg1,2,,Robert Wagner,0,,0.4873577862378117,,,speaker
+text_catboost_cfg1,2,,Ted Turner,1,0.0,0.32636012361456235,,,speaker
+text_catboost_cfg1,2,,Trevor Peacock,1,5.0,0.5616614552742984,,,speaker
+text_catboost_cfg1,2,,Woody Durham,1,0.0,0.02363298947726306,,,speaker
+text_catboost_cfg1,3,data/nodementia/Al Pacino/AlPacino_1.wav,Al Pacino,0,,0.05208304514344522,,,clip
+text_catboost_cfg1,3,data/nodementia/Al Pacino/AlPacino_2.wav,Al Pacino,0,,0.01696948582088706,,,clip
+text_catboost_cfg1,3,data/nodementia/Al Pacino/AlPacino_3.wav,Al Pacino,0,,0.0363786520218295,,,clip
+text_catboost_cfg1,3,data/nodementia/Angela Lansbury/Angela Lansbury_1.wav,Angela Lansbury,0,,0.01477939171123378,,,clip
+text_catboost_cfg1,3,data/nodementia/Angela Lansbury/Angela Lansbury_2.wav,Angela Lansbury,0,,0.12025272862093024,,,clip
+text_catboost_cfg1,3,data/nodementia/Angela Lansbury/Angela Lansbury_3.wav,Angela Lansbury,0,,0.01761669776442781,,,clip
+text_catboost_cfg1,3,data/dementia/B B King/bbking_0.wav,B B King,1,0.0,0.005724967237396725,,,clip
+text_catboost_cfg1,3,data/dementia/B B King/bbking_10.wav,B B King,1,10.0,0.7804205945969585,,,clip
+text_catboost_cfg1,3,data/dementia/B B King/bbking_15.wav,B B King,1,15.0,0.0037060224949380057,,,clip
+text_catboost_cfg1,3,data/nodementia/Bill Cosby/BillCosby_1.wav,Bill Cosby,0,,0.13796879753515287,,,clip
+text_catboost_cfg1,3,data/nodementia/Bill Cosby/BillCosby_3.wav,Bill Cosby,0,,0.013831215244752596,,,clip
+text_catboost_cfg1,3,data/nodementia/Bob Newhart/BobNewhart_2.wav,Bob Newhart,0,,0.9082809524802256,,,clip
+text_catboost_cfg1,3,data/nodementia/Bob Newhart/BobNewhart_3.wav,Bob Newhart,0,,0.9187693351801484,,,clip
+text_catboost_cfg1,3,data/dementia/Bobby Womack/BobbyWomack_0.wav,Bobby Womack,1,0.0,0.017452579430478555,,,clip
+text_catboost_cfg1,3,data/dementia/Casey Kasem/CaseyKasem_15.wav,Casey Kasem,1,15.0,0.860982076451184,,,clip
+text_catboost_cfg1,3,data/dementia/Casey Kasem/CaseyKasem_5.wav,Casey Kasem,1,5.0,0.07868063669497324,,,clip
+text_catboost_cfg1,3,data/dementia/Charles Bronson/CharlesBronson_10.wav,Charles Bronson,1,10.0,0.7528153468587192,,,clip
+text_catboost_cfg1,3,data/dementia/Charles Bronson/CharlesBronson_15.wav,Charles Bronson,1,15.0,0.00834236597076241,,,clip
+text_catboost_cfg1,3,data/nodementia/Chuck norris/Chuck norris_1.wav,Chuck norris,0,,0.16631970649939495,,,clip
+text_catboost_cfg1,3,data/nodementia/Chuck norris/Chuck norris_2.wav,Chuck norris,0,,0.048187067593435357,,,clip
+text_catboost_cfg1,3,data/nodementia/Chuck norris/Chuck norris_3.wav,Chuck norris,0,,0.04908558987898993,,,clip
+text_catboost_cfg1,3,data/nodementia/Donald Sutherland/DonaldSutherland_1.wav,Donald Sutherland,0,,0.11623693293761954,,,clip
+text_catboost_cfg1,3,data/nodementia/Donald Sutherland/DonaldSutherland_2.wav,Donald Sutherland,0,,0.051302929782344596,,,clip
+text_catboost_cfg1,3,data/nodementia/Donald Sutherland/DonaldSutherland_3.wav,Donald Sutherland,0,,0.12633115436873996,,,clip
+text_catboost_cfg1,3,data/nodementia/George H W Bush/GeorgeHWBush_2.wav,George H W Bush,0,,0.010201901389738527,,,clip
+text_catboost_cfg1,3,data/nodementia/George H W Bush/GeorgeHWBush_3.wav,George H W Bush,0,,0.009577191495823922,,,clip
+text_catboost_cfg1,3,data/dementia/Jack Hanna/JackHanna_10.wav,Jack Hanna,1,10.0,0.04576102371048394,,,clip
+text_catboost_cfg1,3,data/dementia/Jack Hanna/JackHanna_15.wav,Jack Hanna,1,15.0,0.1093471032925348,,,clip
+text_catboost_cfg1,3,data/dementia/James Stewart/JamesStewart_5.wav,James Stewart,1,5.0,0.6897296728931276,,,clip
+text_catboost_cfg1,3,data/nodementia/Jerry Lewis/JerryLewis1.wav,Jerry Lewis,0,,0.3271421860245221,,,clip
+text_catboost_cfg1,3,data/nodementia/Jerry Lewis/JerryLewis2.wav,Jerry Lewis,0,,0.04113571819289331,,,clip
+text_catboost_cfg1,3,data/nodementia/Jerry Lewis/JerryLewis3.wav,Jerry Lewis,0,,0.45348942926052976,,,clip
+text_catboost_cfg1,3,data/dementia/Jim McLean/jimmclean_10.wav,Jim McLean,1,10.0,0.39965024583024916,,,clip
+text_catboost_cfg1,3,data/dementia/Leon Redbone/leonredbone_15.wav,Leon Redbone,1,15.0,0.008176300428433985,,,clip
+text_catboost_cfg1,3,data/nodementia/Line Renaud/LineRenaud_1.wav,Line Renaud,0,,0.013022946883128102,,,clip
+text_catboost_cfg1,3,data/nodementia/Line Renaud/LineRenaud_3.wav,Line Renaud,0,,0.008412772550415558,,,clip
+text_catboost_cfg1,3,data/nodementia/Martin Landau/MartinLandau_1.wav,Martin Landau,0,,0.6500289741840289,,,clip
+text_catboost_cfg1,3,data/nodementia/Martin Landau/MartinLandau_2.wav,Martin Landau,0,,0.005760754408929999,,,clip
+text_catboost_cfg1,3,data/nodementia/Martin Landau/MartinLandau_3.wav,Martin Landau,0,,0.8024385901207788,,,clip
+text_catboost_cfg1,3,data/nodementia/Mick Jagger/MickJagger_1.wav,Mick Jagger,0,,0.01328510440728414,,,clip
+text_catboost_cfg1,3,data/nodementia/Mick Jagger/MickJagger_2.wav,Mick Jagger,0,,0.017926880644103003,,,clip
+text_catboost_cfg1,3,data/nodementia/Mick Jagger/MickJagger_3.wav,Mick Jagger,0,,0.14897295338564776,,,clip
+text_catboost_cfg1,3,data/nodementia/Roger Moore/RogerMoore_1.wav,Roger Moore,0,,0.035588329863613925,,,clip
+text_catboost_cfg1,3,data/nodementia/Roger Moore/RogerMoore_2.wav,Roger Moore,0,,0.9945471568859939,,,clip
+text_catboost_cfg1,3,data/nodementia/Roger Moore/RogerMoore_3.wav,Roger Moore,0,,0.08401610375199106,,,clip
+text_catboost_cfg1,3,data/nodementia/Werner Herzog/WernerHerzog_1.wav,Werner Herzog,0,,0.006806941875359582,,,clip
+text_catboost_cfg1,3,,Al Pacino,0,,0.035143727662053925,,,speaker
+text_catboost_cfg1,3,,Angela Lansbury,0,,0.050882939365530615,,,speaker
+text_catboost_cfg1,3,,B B King,1,0.0,0.26328386144309773,,,speaker
+text_catboost_cfg1,3,,Bill Cosby,0,,0.07590000638995273,,,speaker
+text_catboost_cfg1,3,,Bob Newhart,0,,0.913525143830187,,,speaker
+text_catboost_cfg1,3,,Bobby Womack,1,0.0,0.017452579430478555,,,speaker
+text_catboost_cfg1,3,,Casey Kasem,1,5.0,0.4698313565730786,,,speaker
+text_catboost_cfg1,3,,Charles Bronson,1,10.0,0.3805788564147408,,,speaker
+text_catboost_cfg1,3,,Chuck norris,0,,0.08786412132394007,,,speaker
+text_catboost_cfg1,3,,Donald Sutherland,0,,0.09795700569623471,,,speaker
+text_catboost_cfg1,3,,George H W Bush,0,,0.009889546442781224,,,speaker
+text_catboost_cfg1,3,,Jack Hanna,1,10.0,0.07755406350150937,,,speaker
+text_catboost_cfg1,3,,James Stewart,1,5.0,0.6897296728931276,,,speaker
+text_catboost_cfg1,3,,Jerry Lewis,0,,0.2739224444926484,,,speaker
+text_catboost_cfg1,3,,Jim McLean,1,10.0,0.39965024583024916,,,speaker
+text_catboost_cfg1,3,,Leon Redbone,1,15.0,0.008176300428433985,,,speaker
+text_catboost_cfg1,3,,Line Renaud,0,,0.010717859716771829,,,speaker
+text_catboost_cfg1,3,,Martin Landau,0,,0.4860761062379126,,,speaker
+text_catboost_cfg1,3,,Mick Jagger,0,,0.0600616461456783,,,speaker
+text_catboost_cfg1,3,,Roger Moore,0,,0.37138386350053293,,,speaker
+text_catboost_cfg1,3,,Werner Herzog,0,,0.006806941875359582,,,speaker
+text_catboost_cfg1,4,data/nodementia/Bob Dylan/BobDylan_1.wav,Bob Dylan,0,,0.006385502931958474,,,clip
+text_catboost_cfg1,4,data/nodementia/Bob Dylan/BobDylan_2.wav,Bob Dylan,0,,0.003413238770488021,,,clip
+text_catboost_cfg1,4,data/nodementia/Bob Dylan/BobDylan_3.wav,Bob Dylan,0,,0.0036619031242870795,,,clip
+text_catboost_cfg1,4,data/nodementia/Calypso Rose/CalypsoRose_3.wav,Calypso Rose,0,,0.4250447771543562,,,clip
+text_catboost_cfg1,4,data/nodementia/Calypso Rose/CalypsoRose__1.wav,Calypso Rose,0,,0.6336173403212337,,,clip
+text_catboost_cfg1,4,data/nodementia/David Soul/DavidSoul_1.wav,David Soul,0,,0.79563106377283,,,clip
+text_catboost_cfg1,4,data/nodementia/David Soul/DavidSoul_2.wav,David Soul,0,,0.3044557290578843,,,clip
+text_catboost_cfg1,4,data/nodementia/David Soul/DavidSoul_3.wav,David Soul,0,,0.08395143652080166,,,clip
+text_catboost_cfg1,4,data/nodementia/Derek Jacobi/DerekJacobi_1.wav,Derek Jacobi,0,,0.08449855575445203,,,clip
+text_catboost_cfg1,4,data/nodementia/Derek Jacobi/DerekJacobi_3.wav,Derek Jacobi,0,,0.9694415673434142,,,clip
+text_catboost_cfg1,4,data/nodementia/Frank Vincent/FrankVincent_2.wav,Frank Vincent,0,,0.0481652900158795,,,clip
+text_catboost_cfg1,4,data/nodementia/Frank Vincent/FrankVincent_3.wav,Frank Vincent,0,,0.1515237559704404,,,clip
+text_catboost_cfg1,4,data/nodementia/George A Romero/GeorgeARomero_1.wav,George A Romero,0,,0.22270331907570118,,,clip
+text_catboost_cfg1,4,data/nodementia/George A Romero/GeorgeARomero_2.wav,George A Romero,0,,0.003265409709993987,,,clip
+text_catboost_cfg1,4,data/nodementia/George A Romero/GeorgeARomero_3.wav,George A Romero,0,,0.3642230321962532,,,clip
+text_catboost_cfg1,4,data/dementia/George Klein/georgeklein_5_1.wav,George Klein,1,5.0,0.9037214120414725,,,clip
+text_catboost_cfg1,4,data/dementia/George Klein/georgeklein_5_2.wav,George Klein,1,5.0,0.03723860620333942,,,clip
+text_catboost_cfg1,4,data/dementia/George Klein/georgeklein_5_3.wav,George Klein,1,5.0,0.0036468925038260496,,,clip
+text_catboost_cfg1,4,data/nodementia/Joe Biden/JoeBiden_1.wav,Joe Biden,0,,0.03685027979088448,,,clip
+text_catboost_cfg1,4,data/nodementia/Joe Biden/JoeBiden_3.wav,Joe Biden,0,,0.3965654390761054,,,clip
+text_catboost_cfg1,4,data/nodementia/Joe Pesci/JoePesci_1.wav,Joe Pesci,0,,0.0018333644639368972,,,clip
+text_catboost_cfg1,4,data/nodementia/Joe Pesci/JoePesci_2.wav,Joe Pesci,0,,0.00010841819011369161,,,clip
+text_catboost_cfg1,4,data/nodementia/Joe Pesci/JoePesci_3.wav,Joe Pesci,0,,0.6828359736743773,,,clip
+text_catboost_cfg1,4,data/dementia/Jonathan Miller/JonathanMiller_5.wav,Jonathan Miller,1,5.0,0.08733667180081196,,,clip
+text_catboost_cfg1,4,data/nodementia/Michael Cimino/MichaelCimino_2.wav,Michael Cimino,0,,0.03942446907916258,,,clip
+text_catboost_cfg1,4,data/nodementia/Peter Fonda/PeterFonda_1.wav,Peter Fonda,0,,0.9698175795472761,,,clip
+text_catboost_cfg1,4,data/nodementia/Peter Fonda/PeterFonda_2.wav,Peter Fonda,0,,0.009835235195065501,,,clip
+text_catboost_cfg1,4,data/nodementia/Peter Fonda/PeterFonda_3.wav,Peter Fonda,0,,0.5382154583777354,,,clip
+text_catboost_cfg1,4,data/dementia/Ray Dolby/RayDolby_0.wav,Ray Dolby,1,0.0,0.015838096413013914,,,clip
+text_catboost_cfg1,4,data/dementia/Ray Dolby/RayDolby_10.wav,Ray Dolby,1,10.0,0.8168183029879795,,,clip
+text_catboost_cfg1,4,data/nodementia/Robert Duvall/RobertDuvall_1.wav,Robert Duvall,0,,0.013426506002575809,,,clip
+text_catboost_cfg1,4,data/nodementia/Robert Duvall/RobertDuvall_2.wav,Robert Duvall,0,,0.006975925820602639,,,clip
+text_catboost_cfg1,4,data/nodementia/Robert Duvall/RobertDuvall_3.wav,Robert Duvall,0,,0.7057939633264927,,,clip
+text_catboost_cfg1,4,data/dementia/Ronan O_Rahilly/ronano_rahilly_15_1.wav,Ronan O_Rahilly,1,15.0,0.020870172966998328,,,clip
+text_catboost_cfg1,4,data/dementia/Ronan O_Rahilly/ronano_rahilly_15_2.wav,Ronan O_Rahilly,1,15.0,0.7681618539617984,,,clip
+text_catboost_cfg1,4,data/nodementia/Rosalynn Carter/RosalynnCarter_1.wav,Rosalynn Carter,0,,0.0038368968806069535,,,clip
+text_catboost_cfg1,4,data/nodementia/Rosalynn Carter/RosalynnCarter_2.wav,Rosalynn Carter,0,,0.7118461936749787,,,clip
+text_catboost_cfg1,4,data/nodementia/Rosalynn Carter/RosalynnCarter_3.wav,Rosalynn Carter,0,,0.9937615114299049,,,clip
+text_catboost_cfg1,4,data/dementia/Steve Lawrence/SteveLawrence_15.wav,Steve Lawrence,1,15.0,0.378176814408876,,,clip
+text_catboost_cfg1,4,data/nodementia/Steve Reich/SteveReich_2.wav,Steve Reich,0,,0.18779488894149218,,,clip
+text_catboost_cfg1,4,data/nodementia/Steve Reich/SteveReich_3.wav,Steve Reich,0,,0.01124161980363843,,,clip
+text_catboost_cfg1,4,data/dementia/Terry Jones/terryjones_5.wav,Terry Jones,1,5.0,0.03168091505484801,,,clip
+text_catboost_cfg1,4,data/dementia/Terry Pratchett/TerryPratchett_0.wav,Terry Pratchett,1,0.0,0.7038350085262441,,,clip
+text_catboost_cfg1,4,data/dementia/Terry Pratchett/TerryPratchett_5.wav,Terry Pratchett,1,5.0,0.2120361843765997,,,clip
+text_catboost_cfg1,4,data/dementia/Thomas Dorsey/thomasdorsey_0.wav,Thomas Dorsey,1,0.0,0.34435743959788384,,,clip
+text_catboost_cfg1,4,,Bob Dylan,0,,0.004486881608911191,,,speaker
+text_catboost_cfg1,4,,Calypso Rose,0,,0.529331058737795,,,speaker
+text_catboost_cfg1,4,,David Soul,0,,0.39467940978383864,,,speaker
+text_catboost_cfg1,4,,Derek Jacobi,0,,0.5269700615489331,,,speaker
+text_catboost_cfg1,4,,Frank Vincent,0,,0.09984452299315995,,,speaker
+text_catboost_cfg1,4,,George A Romero,0,,0.1967305869939828,,,speaker
+text_catboost_cfg1,4,,George Klein,1,5.0,0.314868970249546,,,speaker
+text_catboost_cfg1,4,,Joe Biden,0,,0.21670785943349496,,,speaker
+text_catboost_cfg1,4,,Joe Pesci,0,,0.22825925210947595,,,speaker
+text_catboost_cfg1,4,,Jonathan Miller,1,5.0,0.08733667180081196,,,speaker
+text_catboost_cfg1,4,,Michael Cimino,0,,0.03942446907916258,,,speaker
+text_catboost_cfg1,4,,Peter Fonda,0,,0.5059560910400257,,,speaker
+text_catboost_cfg1,4,,Ray Dolby,1,0.0,0.4163281997004967,,,speaker
+text_catboost_cfg1,4,,Robert Duvall,0,,0.24206546504989038,,,speaker
+text_catboost_cfg1,4,,Ronan O_Rahilly,1,15.0,0.39451601346439835,,,speaker
+text_catboost_cfg1,4,,Rosalynn Carter,0,,0.5698148673284968,,,speaker
+text_catboost_cfg1,4,,Steve Lawrence,1,15.0,0.378176814408876,,,speaker
+text_catboost_cfg1,4,,Steve Reich,0,,0.09951825437256531,,,speaker
+text_catboost_cfg1,4,,Terry Jones,1,5.0,0.03168091505484801,,,speaker
+text_catboost_cfg1,4,,Terry Pratchett,1,0.0,0.4579355964514219,,,speaker
+text_catboost_cfg1,4,,Thomas Dorsey,1,0.0,0.34435743959788384,,,speaker
+text_catboost_cfg1,5,data/nodementia/Bill Wyman/BillWyman_1.wav,Bill Wyman,0,,0.1190137869640723,,,clip
+text_catboost_cfg1,5,data/nodementia/Bill Wyman/BillWyman_2.wav,Bill Wyman,0,,0.14966918416090463,,,clip
+text_catboost_cfg1,5,data/nodementia/Bill Wyman/BillWyman_3.wav,Bill Wyman,0,,0.06969430340762348,,,clip
+text_catboost_cfg1,5,data/dementia/Charmian Carr/CharmianCarr_15.wav,Charmian Carr,1,15.0,0.04643407677952339,,,clip
+text_catboost_cfg1,5,data/dementia/Charmian Carr/CharmianCarr_5.wav,Charmian Carr,1,5.0,0.7031333355095227,,,clip
+text_catboost_cfg1,5,data/nodementia/Dick Cavett/DickCavett_1.wav,Dick Cavett,0,,0.3507743755791813,,,clip
+text_catboost_cfg1,5,data/nodementia/Dick Cavett/DickCavett_3.wav,Dick Cavett,0,,0.5247731064434339,,,clip
+text_catboost_cfg1,5,data/dementia/Emile Griffith/emilegriffith_5.wav,Emile Griffith,1,5.0,0.007854868231777931,,,clip
+text_catboost_cfg1,5,data/nodementia/Harry Belafonte/HarryBelafonte_1.wav,Harry Belafonte,0,,0.5969347385451537,,,clip
+text_catboost_cfg1,5,data/nodementia/Harry Belafonte/HarryBelafonte_2.wav,Harry Belafonte,0,,0.04270180234856738,,,clip
+text_catboost_cfg1,5,data/nodementia/Harry Belafonte/HarryBelafonte_3.wav,Harry Belafonte,0,,0.9716310798286991,,,clip
+text_catboost_cfg1,5,data/nodementia/Harvey Keitel/HarveyKeitel_1.wav,Harvey Keitel,0,,0.006345501698655228,,,clip
+text_catboost_cfg1,5,data/nodementia/Harvey Keitel/HarveyKeitel_2.wav,Harvey Keitel,0,,0.01823979002910396,,,clip
+text_catboost_cfg1,5,data/nodementia/Harvey Keitel/HarveyKeitel_3.wav,Harvey Keitel,0,,0.06125000507743197,,,clip
+text_catboost_cfg1,5,data/nodementia/James Caan/JamesCaan_1.wav,James Caan,0,,0.32150591295137343,,,clip
+text_catboost_cfg1,5,data/nodementia/James Caan/JamesCaan_2.wav,James Caan,0,,0.8995559143108532,,,clip
+text_catboost_cfg1,5,data/nodementia/James Caan/JamesCaan_3.wav,James Caan,0,,0.010828650882756275,,,clip
+text_catboost_cfg1,5,data/dementia/Jeanne Little/JeanneLittle_10.wav,Jeanne Little,1,10.0,0.2710262042275344,,,clip
+text_catboost_cfg1,5,data/nodementia/Jerry Stiller/JerryStiller_2.wav,Jerry Stiller,0,,0.010168481741284988,,,clip
+text_catboost_cfg1,5,data/nodementia/Jerry Stiller/JerryStiller_3.wav,Jerry Stiller,0,,0.0290800144383608,,,clip
+text_catboost_cfg1,5,data/dementia/Jesse Helms/jessehelms_0.wav,Jesse Helms,1,0.0,0.06840085783190711,,,clip
+text_catboost_cfg1,5,data/dementia/Jesse Helms/jessehelms_5_1.wav,Jesse Helms,1,5.0,0.4118361702446838,,,clip
+text_catboost_cfg1,5,data/dementia/Jesse Helms/jessehelms_5_2.wav,Jesse Helms,1,5.0,0.8295275511794703,,,clip
+text_catboost_cfg1,5,data/nodementia/Karl Lagerfeld/KarlLagerfeld_2.wav,Karl Lagerfeld,0,,0.45288697885726686,,,clip
+text_catboost_cfg1,5,data/nodementia/Karl Lagerfeld/KarlLagerfeld_3.wav,Karl Lagerfeld,0,,0.008966807233318951,,,clip
+text_catboost_cfg1,5,data/nodementia/Merle Haggard/MerleHaggard_1.wav,Merle Haggard,0,,0.9795279519584135,,,clip
+text_catboost_cfg1,5,data/nodementia/Merle Haggard/MerleHaggard_2.wav,Merle Haggard,0,,0.7479254447733622,,,clip
+text_catboost_cfg1,5,data/nodementia/Merle Haggard/MerleHaggard_3.wav,Merle Haggard,0,,0.5707245599379692,,,clip
+text_catboost_cfg1,5,data/nodementia/Milos Forman/MilosForman_1.wav,Milos Forman,0,,0.9744137915547312,,,clip
+text_catboost_cfg1,5,data/nodementia/Milos Forman/MilosForman_2.wav,Milos Forman,0,,0.16716472069834593,,,clip
+text_catboost_cfg1,5,data/nodementia/Milos Forman/MilosForman_3.wav,Milos Forman,0,,0.12823534804950437,,,clip
+text_catboost_cfg1,5,data/nodementia/Mireille Darc/MireilleDarc_2.wav,Mireille Darc,0,,0.2833837508950988,,,clip
+text_catboost_cfg1,5,data/nodementia/Mireille Darc/MireilleDarc_3.wav,Mireille Darc,0,,0.0748598743518422,,,clip
+text_catboost_cfg1,5,data/dementia/Otis Chandler/OtisChandler_5.wav,Otis Chandler,1,5.0,0.033557237725013095,,,clip
+text_catboost_cfg1,5,data/nodementia/Prince Philip/Prince Philip_1.wav,Prince Philip,0,,0.7934159315688912,,,clip
+text_catboost_cfg1,5,data/nodementia/Prince Philip/Prince Philip_2.wav,Prince Philip,0,,0.8944342960663516,,,clip
+text_catboost_cfg1,5,data/nodementia/Prince Philip/Prince Philip_3.wav,Prince Philip,0,,0.006820513661963009,,,clip
+text_catboost_cfg1,5,data/dementia/Ronald Reagan/RonaldReagan_10.wav,Ronald Reagan,1,10.0,0.12160711458131242,,,clip
+text_catboost_cfg1,5,data/dementia/Ronald Reagan/RonaldReagan_5.wav,Ronald Reagan,1,5.0,0.08184619145548531,,,clip
+text_catboost_cfg1,5,data/nodementia/Sophia Loren/SophiaLoren_1.wav,Sophia Loren,0,,0.9401368707176888,,,clip
+text_catboost_cfg1,5,data/nodementia/Sophia Loren/SophiaLoren_2.wav,Sophia Loren,0,,0.17619695415818035,,,clip
+text_catboost_cfg1,5,data/dementia/Tony Parkes/TonyParkes_10.wav,Tony Parkes,1,10.0,0.856863199324306,,,clip
+text_catboost_cfg1,5,data/dementia/Tony Parkes/TonyParkes_5.wav,Tony Parkes,1,5.0,0.5916916896209573,,,clip
+text_catboost_cfg1,5,data/dementia/Unita Blackwell/UnitaBlackwell_15.wav,Unita Blackwell,1,15.0,5.172239018795764e-05,,,clip
+text_catboost_cfg1,5,data/nodementia/Walter Mondale/WalterMondale_3.wav,Walter Mondale,0,,0.0023668978532162587,,,clip
+text_catboost_cfg1,5,data/nodementia/Warren Beatty/WarrenBeatty_3.wav,Warren Beatty,0,,0.9322457968540844,,,clip
+text_catboost_cfg1,5,,Bill Wyman,0,,0.11279242484420014,,,speaker
+text_catboost_cfg1,5,,Charmian Carr,1,5.0,0.37478370614452305,,,speaker
+text_catboost_cfg1,5,,Dick Cavett,0,,0.4377737410113076,,,speaker
+text_catboost_cfg1,5,,Emile Griffith,1,5.0,0.007854868231777931,,,speaker
+text_catboost_cfg1,5,,Harry Belafonte,0,,0.5370892069074734,,,speaker
+text_catboost_cfg1,5,,Harvey Keitel,0,,0.028611765601730385,,,speaker
+text_catboost_cfg1,5,,James Caan,0,,0.410630159381661,,,speaker
+text_catboost_cfg1,5,,Jeanne Little,1,10.0,0.2710262042275344,,,speaker
+text_catboost_cfg1,5,,Jerry Stiller,0,,0.019624248089822896,,,speaker
+text_catboost_cfg1,5,,Jesse Helms,1,0.0,0.43658819308535374,,,speaker
+text_catboost_cfg1,5,,Karl Lagerfeld,0,,0.2309268930452929,,,speaker
+text_catboost_cfg1,5,,Merle Haggard,0,,0.7660593188899151,,,speaker
+text_catboost_cfg1,5,,Milos Forman,0,,0.4232712867675272,,,speaker
+text_catboost_cfg1,5,,Mireille Darc,0,,0.17912181262347052,,,speaker
+text_catboost_cfg1,5,,Otis Chandler,1,5.0,0.033557237725013095,,,speaker
+text_catboost_cfg1,5,,Prince Philip,0,,0.5648902470990685,,,speaker
+text_catboost_cfg1,5,,Ronald Reagan,1,5.0,0.10172665301839887,,,speaker
+text_catboost_cfg1,5,,Sophia Loren,0,,0.5581669124379346,,,speaker
+text_catboost_cfg1,5,,Tony Parkes,1,5.0,0.7242774444726316,,,speaker
+text_catboost_cfg1,5,,Unita Blackwell,1,15.0,5.172239018795764e-05,,,speaker
+text_catboost_cfg1,5,,Walter Mondale,0,,0.0023668978532162587,,,speaker
+text_catboost_cfg1,5,,Warren Beatty,0,,0.9322457968540844,,,speaker
+text_catboost_cfg1,6,data/nodementia/Angelo Badalamenti/AngeloBadalamenti_1.wav,Angelo Badalamenti,0,,0.4890342328539304,,,clip
+text_catboost_cfg1,6,data/nodementia/Angelo Badalamenti/AngeloBadalamenti_2.wav,Angelo Badalamenti,0,,0.9846868511628512,,,clip
+text_catboost_cfg1,6,data/nodementia/Angelo Badalamenti/AngeloBadalamenti_3.wav,Angelo Badalamenti,0,,0.006041833215535188,,,clip
+text_catboost_cfg1,6,data/dementia/Ben Bradlee/BenBradlee_15.wav,Ben Bradlee,1,15.0,0.21432976720612762,,,clip
+text_catboost_cfg1,6,data/dementia/Ben Bradlee/BenBradlee_5.wav,Ben Bradlee,1,5.0,0.6210172158224802,,,clip
+text_catboost_cfg1,6,data/nodementia/Bob Barker/bobbarker_2.wav,Bob Barker,0,,0.37845915896340343,,,clip
+text_catboost_cfg1,6,data/nodementia/Bob Barker/bobbarker_3.wav,Bob Barker,0,,0.6076961181656052,,,clip
+text_catboost_cfg1,6,data/nodementia/Bob Dole/BobDole_1.wav,Bob Dole,0,,0.446837683597071,,,clip
+text_catboost_cfg1,6,data/nodementia/Bob Dole/BobDole_2.wav,Bob Dole,0,,0.007449154462108801,,,clip
+text_catboost_cfg1,6,data/nodementia/Bob Dole/BobDole_3.wav,Bob Dole,0,,0.0008301833405335098,,,clip
+text_catboost_cfg1,6,data/nodementia/Brian De Palma/BrianDePalma_1.wav,Brian De Palma,0,,0.1295404347318579,,,clip
+text_catboost_cfg1,6,data/nodementia/Brian De Palma/BrianDePalma_2.wav,Brian De Palma,0,,0.018999458969210747,,,clip
+text_catboost_cfg1,6,data/nodementia/Brian De Palma/BrianDePalma_3.wav,Brian De Palma,0,,0.23630091231960823,,,clip
+text_catboost_cfg1,6,data/dementia/David Prowse/DavidProwse_0.wav,David Prowse,1,0.0,0.008384401993037499,,,clip
+text_catboost_cfg1,6,data/dementia/David Prowse/DavidProwse_10.wav,David Prowse,1,10.0,0.07654558626078829,,,clip
+text_catboost_cfg1,6,data/dementia/David Prowse/DavidProwse_5.wav,David Prowse,1,5.0,0.3006151022095584,,,clip
+text_catboost_cfg1,6,data/dementia/Dennis Moore/DennisMoore_5.wav,Dennis Moore,1,5.0,0.36459853661573727,,,clip
+text_catboost_cfg1,6,data/dementia/Don Lane/DonLane_0.wav,Don Lane,1,0.0,0.1367695476531372,,,clip
+text_catboost_cfg1,6,data/dementia/Donald Sterling/DonaldSterling_5.wav,Donald Sterling,1,5.0,0.878447389732367,,,clip
+text_catboost_cfg1,6,data/dementia/Jessejackson/Jessejackson_0.wav,Jessejackson,1,0.0,0.11729349518854566,,,clip
+text_catboost_cfg1,6,data/nodementia/Jimmy Carter/Jimmy carter_2.wav,Jimmy Carter,0,,0.9058934450877771,,,clip
+text_catboost_cfg1,6,data/nodementia/Jimmy Carter/Jimmy carter_3.wav,Jimmy Carter,0,,0.4103087095723853,,,clip
+text_catboost_cfg1,6,data/nodementia/Nana Mouskouri/NanaMouskouri_1.wav,Nana Mouskouri,0,,0.5178795206326474,,,clip
+text_catboost_cfg1,6,data/nodementia/Nana Mouskouri/NanaMouskouri_3.wav,Nana Mouskouri,0,,0.9465567677639705,,,clip
+text_catboost_cfg1,6,data/nodementia/Paul Anka/PaulAnka_2.wav,Paul Anka,0,,0.038060706325801205,,,clip
+text_catboost_cfg1,6,data/nodementia/Paul Anka/PaulAnka_3.wav,Paul Anka,0,,0.486489148314517,,,clip
+text_catboost_cfg1,6,data/nodementia/Paul Sorvino/PaulSorvino_2.wav,Paul Sorvino,0,,0.0031657190269561123,,,clip
+text_catboost_cfg1,6,data/nodementia/Paul Sorvino/PaulSorvino_3.wav,Paul Sorvino,0,,0.3613630894489238,,,clip
+text_catboost_cfg1,6,data/dementia/Peter Reveen/peterreveen_15.wav,Peter Reveen,1,15.0,0.27010467141609595,,,clip
+text_catboost_cfg1,6,data/nodementia/Philip Glass/PhilipGlass_1.wav,Philip Glass,0,,0.009694210081954454,,,clip
+text_catboost_cfg1,6,data/nodementia/Philip Glass/PhilipGlass_2.wav,Philip Glass,0,,0.16638503002326802,,,clip
+text_catboost_cfg1,6,data/nodementia/Philip Glass/PhilipGlass_3.wav,Philip Glass,0,,0.007642048597120574,,,clip
+text_catboost_cfg1,6,data/dementia/Ralph Klein/ralphklein_5_1.wav,Ralph Klein,1,5.0,0.037033063150190774,,,clip
+text_catboost_cfg1,6,data/dementia/Ralph Klein/ralphklein_5_2.wav,Ralph Klein,1,5.0,0.7115800655294557,,,clip
+text_catboost_cfg1,6,data/nodementia/Raquel Welch/RaquelWelch_1.wav,Raquel Welch,0,,0.2057004340011814,,,clip
+text_catboost_cfg1,6,data/nodementia/Raquel Welch/RaquelWelch_2.wav,Raquel Welch,0,,0.6458718770705472,,,clip
+text_catboost_cfg1,6,data/nodementia/Raquel Welch/RaquelWelch_3.wav,Raquel Welch,0,,0.04623675763649302,,,clip
+text_catboost_cfg1,6,data/nodementia/Robert De Niro/RobertDeNiro_1.wav,Robert De Niro,0,,0.004707142650305727,,,clip
+text_catboost_cfg1,6,data/nodementia/Robert De Niro/RobertDeNiro_2.wav,Robert De Niro,0,,0.018847140210133985,,,clip
+text_catboost_cfg1,6,data/nodementia/Robert De Niro/RobertDeNiro_3.wav,Robert De Niro,0,,0.006365096128671494,,,clip
+text_catboost_cfg1,6,data/dementia/Robin Williams/RobinWilliams_0.wav,Robin Williams,1,0.0,0.710378244346553,,,clip
+text_catboost_cfg1,6,data/nodementia/Rupert Murdoch/RupertMurdoch_1.wav,Rupert Murdoch,0,,0.7567984577864387,,,clip
+text_catboost_cfg1,6,data/nodementia/Rupert Murdoch/RupertMurdoch_2.wav,Rupert Murdoch,0,,0.7816006163081212,,,clip
+text_catboost_cfg1,6,data/nodementia/Rupert Murdoch/RupertMurdoch_3.wav,Rupert Murdoch,0,,0.07426056506795511,,,clip
+text_catboost_cfg1,6,data/nodementia/Vangelis/Vangelis_3.wav,Vangelis,0,,0.10320892091151439,,,clip
+text_catboost_cfg1,6,,Angelo Badalamenti,0,,0.4932543057441055,,,speaker
+text_catboost_cfg1,6,,Ben Bradlee,1,5.0,0.4176734915143039,,,speaker
+text_catboost_cfg1,6,,Bob Barker,0,,0.4930776385645043,,,speaker
+text_catboost_cfg1,6,,Bob Dole,0,,0.15170567379990443,,,speaker
+text_catboost_cfg1,6,,Brian De Palma,0,,0.12828026867355893,,,speaker
+text_catboost_cfg1,6,,David Prowse,1,0.0,0.1285150301544614,,,speaker
+text_catboost_cfg1,6,,Dennis Moore,1,5.0,0.36459853661573727,,,speaker
+text_catboost_cfg1,6,,Don Lane,1,0.0,0.1367695476531372,,,speaker
+text_catboost_cfg1,6,,Donald Sterling,1,5.0,0.878447389732367,,,speaker
+text_catboost_cfg1,6,,Jessejackson,1,0.0,0.11729349518854566,,,speaker
+text_catboost_cfg1,6,,Jimmy Carter,0,,0.6581010773300813,,,speaker
+text_catboost_cfg1,6,,Nana Mouskouri,0,,0.7322181441983089,,,speaker
+text_catboost_cfg1,6,,Paul Anka,0,,0.2622749273201591,,,speaker
+text_catboost_cfg1,6,,Paul Sorvino,0,,0.18226440423793996,,,speaker
+text_catboost_cfg1,6,,Peter Reveen,1,15.0,0.27010467141609595,,,speaker
+text_catboost_cfg1,6,,Philip Glass,0,,0.061240429567447685,,,speaker
+text_catboost_cfg1,6,,Ralph Klein,1,5.0,0.37430656433982323,,,speaker
+text_catboost_cfg1,6,,Raquel Welch,0,,0.2992696895694072,,,speaker
+text_catboost_cfg1,6,,Robert De Niro,0,,0.009973126329703735,,,speaker
+text_catboost_cfg1,6,,Robin Williams,1,0.0,0.710378244346553,,,speaker
+text_catboost_cfg1,6,,Rupert Murdoch,0,,0.5375532130541717,,,speaker
+text_catboost_cfg1,6,,Vangelis,0,,0.10320892091151439,,,speaker
+text_catboost_cfg1,7,data/dementia/Aileen Hernandez/aileenhernandez_0.wav,Aileen Hernandez,1,0.0,0.7186705871863582,,,clip
+text_catboost_cfg1,7,data/dementia/Aileen Hernandez/aileenhernandez_5_1.wav,Aileen Hernandez,1,5.0,0.00038699180722154573,,,clip
+text_catboost_cfg1,7,data/dementia/Aileen Hernandez/aileenhernandez_5_2.wav,Aileen Hernandez,1,5.0,0.19187589288212895,,,clip
+text_catboost_cfg1,7,data/nodementia/Alan Arkin/AlanArkin_1.wav,Alan Arkin,0,,0.006175563314685354,,,clip
+text_catboost_cfg1,7,data/nodementia/Alan Arkin/AlanArkin_3.wav,Alan Arkin,0,,0.5907651832664005,,,clip
+text_catboost_cfg1,7,data/dementia/Allan Burns/AllanBurns_5.wav,Allan Burns,1,5.0,0.9645043144182947,,,clip
+text_catboost_cfg1,7,data/dementia/Annette Michelson/annettemichelson_15.wav,Annette Michelson,1,15.0,0.5461276814536027,,,clip
+text_catboost_cfg1,7,data/nodementia/Clint Eastwood/Clint Eastwood_1.wav,Clint Eastwood,0,,0.08062294968319968,,,clip
+text_catboost_cfg1,7,data/nodementia/Clint Eastwood/Clint Eastwood_2.wav,Clint Eastwood,0,,0.0927307476789272,,,clip
+text_catboost_cfg1,7,data/nodementia/Clint Eastwood/Clint Eastwood_3.wav,Clint Eastwood,0,,0.29397303874951586,,,clip
+text_catboost_cfg1,7,data/nodementia/David Allan Coe/DavidAllanCoe_1.wav,David Allan Coe,0,,0.053852978648034684,,,clip
+text_catboost_cfg1,7,data/nodementia/David Allan Coe/DavidAllanCoe_2.wav,David Allan Coe,0,,0.20774399220969256,,,clip
+text_catboost_cfg1,7,data/nodementia/David Allan Coe/DavidAllanCoe_3.wav,David Allan Coe,0,,0.6698133131526733,,,clip
+text_catboost_cfg1,7,data/nodementia/David Attenboroug/David Attenboroug_3.wav,David Attenboroug,0,,0.16261601323875213,,,clip
+text_catboost_cfg1,7,data/nodementia/Dominic Chianese/DominicChianese_3.wav,Dominic Chianese,0,,0.02655470544123238,,,clip
+text_catboost_cfg1,7,data/nodementia/Dustin Hoffman/DustinHoffman_1.wav,Dustin Hoffman,0,,0.047304472068760664,,,clip
+text_catboost_cfg1,7,data/nodementia/Dustin Hoffman/DustinHoffman_2.wav,Dustin Hoffman,0,,0.004348894595526242,,,clip
+text_catboost_cfg1,7,data/nodementia/Dustin Hoffman/DustinHoffman_3.wav,Dustin Hoffman,0,,0.8000549244842321,,,clip
+text_catboost_cfg1,7,data/dementia/Evelyn Keyes/EvelynKeyes_0.wav,Evelyn Keyes,1,0.0,0.4854856386942264,,,clip
+text_catboost_cfg1,7,data/dementia/Evelyn Keyes/EvelynKeyes_10.wav,Evelyn Keyes,1,10.0,0.004480763352978381,,,clip
+text_catboost_cfg1,7,data/nodementia/James Brolin/JamesBrolin_1.wav,James Brolin,0,,0.506952619900332,,,clip
+text_catboost_cfg1,7,data/nodementia/James Brolin/JamesBrolin_2.wav,James Brolin,0,,0.0442223216497381,,,clip
+text_catboost_cfg1,7,data/nodementia/James Brolin/JamesBrolin_3.wav,James Brolin,0,,0.03859571259586576,,,clip
+text_catboost_cfg1,7,data/nodementia/Martin Scorsese/MartinScorsese_1.wav,Martin Scorsese,0,,0.23961636572753833,,,clip
+text_catboost_cfg1,7,data/nodementia/Martin Scorsese/MartinScorsese_2.wav,Martin Scorsese,0,,0.21624622609827973,,,clip
+text_catboost_cfg1,7,data/nodementia/Martin Scorsese/MartinScorsese_3.wav,Martin Scorsese,0,,0.5406794986482619,,,clip
+text_catboost_cfg1,7,data/nodementia/Max von Sydow/MaxvonSydow_1.wav,Max von Sydow,0,,0.13152965852467752,,,clip
+text_catboost_cfg1,7,data/nodementia/Max von Sydow/MaxvonSydow_3.wav,Max von Sydow,0,,0.8076239172340138,,,clip
+text_catboost_cfg1,7,data/nodementia/Paul McCartney/PaulMcCartney_1.wav,Paul McCartney,0,,0.971124182686553,,,clip
+text_catboost_cfg1,7,data/nodementia/Paul McCartney/PaulMcCartney_2.wav,Paul McCartney,0,,0.01544494343878072,,,clip
+text_catboost_cfg1,7,data/nodementia/Paul McCartney/PaulMcCartney_3.wav,Paul McCartney,0,,0.5113637378616314,,,clip
+text_catboost_cfg1,7,data/nodementia/Paul Michael Glaser/PaulMichaelGlaser_1.wav,Paul Michael Glaser,0,,0.003578947696052192,,,clip
+text_catboost_cfg1,7,data/nodementia/Paul Michael Glaser/PaulMichaelGlaser_3.wav,Paul Michael Glaser,0,,0.779586533336001,,,clip
+text_catboost_cfg1,7,data/dementia/Peter Max/PeterMax_10.wav,Peter Max,1,10.0,0.06500830688149895,,,clip
+text_catboost_cfg1,7,data/dementia/Peter Max/PeterMax_15.wav,Peter Max,1,15.0,0.25459892744216217,,,clip
+text_catboost_cfg1,7,data/nodementia/Ralph Lauren/RalphLauren_2.wav,Ralph Lauren,0,,0.02783576940168849,,,clip
+text_catboost_cfg1,7,data/nodementia/Ralph Lauren/RalphLauren_3.wav,Ralph Lauren,0,,0.00014344185955030632,,,clip
+text_catboost_cfg1,7,data/dementia/Sparky Anderson/SparkyAnderson_0.wav,Sparky Anderson,1,0.0,0.9026299117573848,,,clip
+text_catboost_cfg1,7,data/dementia/Stella Stevens/StellaStevens_15.wav,Stella Stevens,1,15.0,0.4656876766918755,,,clip
+text_catboost_cfg1,7,data/nodementia/Terry Riley/TerryRiley_2.wav,Terry Riley,0,,0.17480163914178676,,,clip
+text_catboost_cfg1,7,data/nodementia/Terry Riley/TerryRiley_3.wav,Terry Riley,0,,0.039344745548246705,,,clip
+text_catboost_cfg1,7,data/dementia/Tim Conway/TimConway_10.wav,Tim Conway,1,10.0,0.24468953747757036,,,clip
+text_catboost_cfg1,7,data/dementia/Tim Conway/TimConway_5.wav,Tim Conway,1,5.0,0.25210659984620426,,,clip
+text_catboost_cfg1,7,data/nodementia/Tina turner/Tinaturner_1.wav,Tina turner,0,,0.06670559969264553,,,clip
+text_catboost_cfg1,7,data/nodementia/Tina turner/Tinaturner_2.wav,Tina turner,0,,0.009034880620007239,,,clip
+text_catboost_cfg1,7,data/nodementia/Tina turner/Tinaturner_3.wav,Tina turner,0,,0.19151338468380372,,,clip
+text_catboost_cfg1,7,,Aileen Hernandez,1,0.0,0.30364449062523624,,,speaker
+text_catboost_cfg1,7,,Alan Arkin,0,,0.29847037329054293,,,speaker
+text_catboost_cfg1,7,,Allan Burns,1,5.0,0.9645043144182947,,,speaker
+text_catboost_cfg1,7,,Annette Michelson,1,15.0,0.5461276814536027,,,speaker
+text_catboost_cfg1,7,,Clint Eastwood,0,,0.1557755787038809,,,speaker
+text_catboost_cfg1,7,,David Allan Coe,0,,0.31047009467013353,,,speaker
+text_catboost_cfg1,7,,David Attenboroug,0,,0.16261601323875213,,,speaker
+text_catboost_cfg1,7,,Dominic Chianese,0,,0.02655470544123238,,,speaker
+text_catboost_cfg1,7,,Dustin Hoffman,0,,0.283902763716173,,,speaker
+text_catboost_cfg1,7,,Evelyn Keyes,1,0.0,0.24498320102360238,,,speaker
+text_catboost_cfg1,7,,James Brolin,0,,0.1965902180486453,,,speaker
+text_catboost_cfg1,7,,Martin Scorsese,0,,0.33218069682469337,,,speaker
+text_catboost_cfg1,7,,Max von Sydow,0,,0.46957678787934565,,,speaker
+text_catboost_cfg1,7,,Paul McCartney,0,,0.4993109546623217,,,speaker
+text_catboost_cfg1,7,,Paul Michael Glaser,0,,0.3915827405160266,,,speaker
+text_catboost_cfg1,7,,Peter Max,1,10.0,0.15980361716183056,,,speaker
+text_catboost_cfg1,7,,Ralph Lauren,0,,0.0139896056306194,,,speaker
+text_catboost_cfg1,7,,Sparky Anderson,1,0.0,0.9026299117573848,,,speaker
+text_catboost_cfg1,7,,Stella Stevens,1,15.0,0.4656876766918755,,,speaker
+text_catboost_cfg1,7,,Terry Riley,0,,0.10707319234501673,,,speaker
+text_catboost_cfg1,7,,Tim Conway,1,5.0,0.2483980686618873,,,speaker
+text_catboost_cfg1,7,,Tina turner,0,,0.08908462166548549,,,speaker
+text_catboost_cfg1,8,data/nodementia/Bernie Sanders/BernieSanders_3.wav,Bernie Sanders,0,,0.8280850333109916,,,clip
+text_catboost_cfg1,8,data/dementia/Bill Buckner/BillBuckner_10.wav,Bill Buckner,1,10.0,0.02566423738834709,,,clip
+text_catboost_cfg1,8,data/dementia/Bill Buckner/BillBuckner_15.wav,Bill Buckner,1,15.0,0.005617118475045487,,,clip
+text_catboost_cfg1,8,data/dementia/Bill Buckner/BillBuckner_5.wav,Bill Buckner,1,5.0,0.027581693597968384,,,clip
+text_catboost_cfg1,8,data/nodementia/Burt Bacharach/Burt Bacharach_1.wav,Burt Bacharach,0,,0.043851564587198404,,,clip
+text_catboost_cfg1,8,data/nodementia/Burt Bacharach/Burt Bacharach_2.wav,Burt Bacharach,0,,0.0025346936455939864,,,clip
+text_catboost_cfg1,8,data/nodementia/Burt Bacharach/Burt Bacharach_3.wav,Burt Bacharach,0,,0.2680752631075516,,,clip
+text_catboost_cfg1,8,data/nodementia/Charles Aznavour/CharlesAznavour_1.wav,Charles Aznavour,0,,0.012114412918578255,,,clip
+text_catboost_cfg1,8,data/nodementia/Charles Aznavour/CharlesAznavour_2.wav,Charles Aznavour,0,,0.3620842286534694,,,clip
+text_catboost_cfg1,8,data/nodementia/Charles Aznavour/CharlesAznavour_3.wav,Charles Aznavour,0,,0.042529702716929595,,,clip
+text_catboost_cfg1,8,data/nodementia/Charlie Watts/CharlieWatts_1.wav,Charlie Watts,0,,0.044107180202549105,,,clip
+text_catboost_cfg1,8,data/nodementia/Charlie Watts/CharlieWatts_3.wav,Charlie Watts,0,,0.1668326016454217,,,clip
+text_catboost_cfg1,8,data/nodementia/Christopher Plummer/christopher plummer_1.wav,Christopher Plummer,0,,0.07886089103600444,,,clip
+text_catboost_cfg1,8,data/nodementia/Christopher Plummer/christopher plummer_2.wav,Christopher Plummer,0,,0.06876213103866873,,,clip
+text_catboost_cfg1,8,data/nodementia/Christopher Plummer/christopher plummer_3.wav,Christopher Plummer,0,,0.062385000467946976,,,clip
+text_catboost_cfg1,8,data/dementia/David Milch/DavidMilch_10.wav,David Milch,1,10.0,0.7001972955491467,,,clip
+text_catboost_cfg1,8,data/dementia/David Milch/DavidMilch_15.wav,David Milch,1,15.0,0.060242276387784593,,,clip
+text_catboost_cfg1,8,data/nodementia/Dionne Warwick/DionneWarwick_1.wav,Dionne Warwick,0,,0.0064226885499528985,,,clip
+text_catboost_cfg1,8,data/nodementia/Dionne Warwick/DionneWarwick_3.wav,Dionne Warwick,0,,0.10309317142678433,,,clip
+text_catboost_cfg1,8,data/nodementia/George Clinton/GeorgeClinton_1.wav,George Clinton,0,,0.15347655733511228,,,clip
+text_catboost_cfg1,8,data/nodementia/George Clinton/GeorgeClinton_2.wav,George Clinton,0,,0.41416973938886636,,,clip
+text_catboost_cfg1,8,data/nodementia/George Clinton/GeorgeClinton_3.wav,George Clinton,0,,0.929894934797754,,,clip
+text_catboost_cfg1,8,data/dementia/Ian McCaskill/ianmccaskill_15.wav,Ian McCaskill,1,15.0,0.4414831048306595,,,clip
+text_catboost_cfg1,8,data/dementia/Jimmy Calderwood/JimmyCalderwood_5.wav,Jimmy Calderwood,1,5.0,0.01651988582757133,,,clip
+text_catboost_cfg1,8,data/dementia/Jimmy Fratianno/JimmyFratianno_0.wav,Jimmy Fratianno,1,0.0,0.08699237701195037,,,clip
+text_catboost_cfg1,8,data/nodementia/John Williams/JohnWilliams_1.wav,John Williams,0,,0.004515379427292722,,,clip
+text_catboost_cfg1,8,data/nodementia/John Williams/JohnWilliams_2.wav,John Williams,0,,0.9491353386295559,,,clip
+text_catboost_cfg1,8,data/nodementia/John Williams/JohnWilliams_3.wav,John Williams,0,,0.17119467038903746,,,clip
+text_catboost_cfg1,8,data/nodementia/Judi Dench/Judi Dench_2.wav,Judi Dench,0,,0.08889687761297635,,,clip
+text_catboost_cfg1,8,data/nodementia/Judi Dench/Judi Dench_3.wav,Judi Dench,0,,0.3769291489004741,,,clip
+text_catboost_cfg1,8,data/nodementia/Martin Sheen/MartinSheen_1.wav,Martin Sheen,0,,0.5388098070656426,,,clip
+text_catboost_cfg1,8,data/nodementia/Martin Sheen/MartinSheen_2.wav,Martin Sheen,0,,0.014100840038276262,,,clip
+text_catboost_cfg1,8,data/nodementia/Martin Sheen/MartinSheen_3.wav,Martin Sheen,0,,0.7611830200136785,,,clip
+text_catboost_cfg1,8,data/dementia/Maureen Forrester/maureenforrester_5.wav,Maureen Forrester,1,5.0,0.2139835743553965,,,clip
+text_catboost_cfg1,8,data/nodementia/Michael Dukakis/MichaelDukakis_1.wav,Michael Dukakis,0,,0.047192195644000956,,,clip
+text_catboost_cfg1,8,data/nodementia/Michael Dukakis/MichaelDukakis_3.wav,Michael Dukakis,0,,0.07741927014832886,,,clip
+text_catboost_cfg1,8,data/nodementia/Michael Gambon/MichaelGambon_2.wav,Michael Gambon,0,,0.0834652327429345,,,clip
+text_catboost_cfg1,8,data/nodementia/Michael Gambon/MichaelGambon_3.wav,Michael Gambon,0,,5.120657373775802e-05,,,clip
+text_catboost_cfg1,8,data/dementia/Omar Sharif/OmarSharif_0.wav,Omar Sharif,1,0.0,0.000620378432902891,,,clip
+text_catboost_cfg1,8,data/dementia/Omar Sharif/OmarSharif_10.wav,Omar Sharif,1,10.0,0.21975769718981564,,,clip
+text_catboost_cfg1,8,data/dementia/Stan Bowles/StanBowles_5.wav,Stan Bowles,1,5.0,0.11154983715910771,,,clip
+text_catboost_cfg1,8,data/dementia/Viv Nicholson/vivnicholson_5.wav,Viv Nicholson,1,5.0,0.7732996659503474,,,clip
+text_catboost_cfg1,8,data/nodementia/Warren Buffett/Warren Buffett_1.wav,Warren Buffett,0,,0.3021023225590863,,,clip
+text_catboost_cfg1,8,data/nodementia/Warren Buffett/Warren Buffett_2.wav,Warren Buffett,0,,0.0218627993161239,,,clip
+text_catboost_cfg1,8,data/nodementia/Warren Buffett/WarrenBuffett_3.wav,Warren Buffett,0,,0.2605240203770101,,,clip
+text_catboost_cfg1,8,,Bernie Sanders,0,,0.8280850333109916,,,speaker
+text_catboost_cfg1,8,,Bill Buckner,1,5.0,0.01962101648712032,,,speaker
+text_catboost_cfg1,8,,Burt Bacharach,0,,0.104820507113448,,,speaker
+text_catboost_cfg1,8,,Charles Aznavour,0,,0.13890944809632574,,,speaker
+text_catboost_cfg1,8,,Charlie Watts,0,,0.10546989092398541,,,speaker
+text_catboost_cfg1,8,,Christopher Plummer,0,,0.07000267418087337,,,speaker
+text_catboost_cfg1,8,,David Milch,1,10.0,0.3802197859684656,,,speaker
+text_catboost_cfg1,8,,Dionne Warwick,0,,0.05475792998836861,,,speaker
+text_catboost_cfg1,8,,George Clinton,0,,0.4991804105072442,,,speaker
+text_catboost_cfg1,8,,Ian McCaskill,1,15.0,0.4414831048306595,,,speaker
+text_catboost_cfg1,8,,Jimmy Calderwood,1,5.0,0.01651988582757133,,,speaker
+text_catboost_cfg1,8,,Jimmy Fratianno,1,0.0,0.08699237701195037,,,speaker
+text_catboost_cfg1,8,,John Williams,0,,0.3749484628152954,,,speaker
+text_catboost_cfg1,8,,Judi Dench,0,,0.2329130132567252,,,speaker
+text_catboost_cfg1,8,,Martin Sheen,0,,0.43803122237253245,,,speaker
+text_catboost_cfg1,8,,Maureen Forrester,1,5.0,0.2139835743553965,,,speaker
+text_catboost_cfg1,8,,Michael Dukakis,0,,0.06230573289616491,,,speaker
+text_catboost_cfg1,8,,Michael Gambon,0,,0.041758219658336135,,,speaker
+text_catboost_cfg1,8,,Omar Sharif,1,0.0,0.11018903781135926,,,speaker
+text_catboost_cfg1,8,,Stan Bowles,1,5.0,0.11154983715910771,,,speaker
+text_catboost_cfg1,8,,Viv Nicholson,1,5.0,0.7732996659503474,,,speaker
+text_catboost_cfg1,8,,Warren Buffett,0,,0.19482971408407343,,,speaker
+text_catboost_cfg1,9,data/dementia/Barry Cohen/BarryCohen_5.wav,Barry Cohen,1,5.0,0.07022762669224145,,,clip
+text_catboost_cfg1,9,data/nodementia/Francis Ford Coppola/FrancisFordCoppola_2.wav,Francis Ford Coppola,0,,0.00494694865418936,,,clip
+text_catboost_cfg1,9,data/nodementia/Francis Ford Coppola/FrancisFordCoppola_3.wav,Francis Ford Coppola,0,,0.27320804974135543,,,clip
+text_catboost_cfg1,9,data/dementia/Gale Sayers/galesayers_0.wav,Gale Sayers,1,0.0,0.000728665716495992,,,clip
+text_catboost_cfg1,9,data/dementia/Gale Sayers/galesayers_5_1.wav,Gale Sayers,1,5.0,0.03783002585147844,,,clip
+text_catboost_cfg1,9,data/dementia/Gale Sayers/galesayers_5_2.wav,Gale Sayers,1,5.0,0.007418009518065718,,,clip
+text_catboost_cfg1,9,data/dementia/George Robb/georgerobb_10.wav,George Robb,1,10.0,0.051572668455011066,,,clip
+text_catboost_cfg1,9,data/dementia/Ian Holm/IanHolm_2.wav,Ian Holm,1,2.0,0.02403999694445184,,,clip
+text_catboost_cfg1,9,data/dementia/Iris Murdoch/IrisMurdoch_10.wav,Iris Murdoch,1,10.0,0.9018863336699311,,,clip
+text_catboost_cfg1,9,data/dementia/Iris Murdoch/IrisMurdoch_5.wav,Iris Murdoch,1,5.0,0.002697881543255786,,,clip
+text_catboost_cfg1,9,data/dementia/Jack Webster/JackWebster_10.wav,Jack Webster,1,10.0,0.9350719206462065,,,clip
+text_catboost_cfg1,9,data/dementia/Jack Webster/JackWebster_5.wav,Jack Webster,1,5.0,0.46117135730138414,,,clip
+text_catboost_cfg1,9,data/nodementia/James Cromwell/JamesCromwell_3.wav,James Cromwell,0,,0.841202820375294,,,clip
+text_catboost_cfg1,9,data/nodementia/Jane Fonda/Jane Fonda_1.wav,Jane Fonda,0,,0.21142319164101925,,,clip
+text_catboost_cfg1,9,data/nodementia/Jane Fonda/JaneFonda_3.wav,Jane Fonda,0,,0.04144315062098372,,,clip
+text_catboost_cfg1,9,data/dementia/Joe Conley/JoeConley_0.wav,Joe Conley,1,0.0,0.08206048041959223,,,clip
+text_catboost_cfg1,9,data/nodementia/Lee Majors/LeeMajors_2.wav,Lee Majors,0,,0.7765502914484549,,,clip
+text_catboost_cfg1,9,data/nodementia/Lee Majors/LeeMajors_3.wav,Lee Majors,0,,0.39450311557218404,,,clip
+text_catboost_cfg1,9,data/nodementia/Michael Caine/Michael Caine_1.wav,Michael Caine,0,,0.004854203802417849,,,clip
+text_catboost_cfg1,9,data/nodementia/Michael Caine/Michael Caine_2.wav,Michael Caine,0,,0.2810169589135083,,,clip
+text_catboost_cfg1,9,data/nodementia/Michael Caine/Michael Caine_3.wav,Michael Caine,0,,0.13571259299292826,,,clip
+text_catboost_cfg1,9,data/nodementia/Michel Piccoli/MichelPiccoli_1.wav,Michel Piccoli,0,,0.11721105093683859,,,clip
+text_catboost_cfg1,9,data/nodementia/Michel Piccoli/MichelPiccoli_2.wav,Michel Piccoli,0,,0.0016096137422807973,,,clip
+text_catboost_cfg1,9,data/nodementia/Michel Piccoli/MichelPiccoli_3.wav,Michel Piccoli,0,,0.006156979407737211,,,clip
+text_catboost_cfg1,9,data/nodementia/Nick Nolte/NickNolte_1.wav,Nick Nolte,0,,0.5355582698378626,,,clip
+text_catboost_cfg1,9,data/nodementia/Nick Nolte/NickNolte_2.wav,Nick Nolte,0,,0.08404587866591387,,,clip
+text_catboost_cfg1,9,data/nodementia/Nick Nolte/NickNolte_3.wav,Nick Nolte,0,,0.0026827194278591965,,,clip
+text_catboost_cfg1,9,data/nodementia/Peter Lupus/PeterLupus_2.wav,Peter Lupus,0,,0.0027929486661277623,,,clip
+text_catboost_cfg1,9,data/nodementia/Richard Donner/RichardDonner_2.wav,Richard Donner,0,,0.7243674792796317,,,clip
+text_catboost_cfg1,9,data/nodementia/Richard Donner/RichardDonner_3.wav,Richard Donner,0,,0.17555411582450833,,,clip
+text_catboost_cfg1,9,data/nodementia/Robert Vaughn/RobertVaughn_1.wav,Robert Vaughn,0,,0.9369715013474809,,,clip
+text_catboost_cfg1,9,data/nodementia/Robert Vaughn/RobertVaughn_2.wav,Robert Vaughn,0,,0.019511145118930075,,,clip
+text_catboost_cfg1,9,data/nodementia/Robert Vaughn/RobertVaughn_3.wav,Robert Vaughn,0,,0.916155822835013,,,clip
+text_catboost_cfg1,9,data/nodementia/Roger Waters/RogerWaters_2.wav,Roger Waters,0,,0.03257181048814823,,,clip
+text_catboost_cfg1,9,data/nodementia/Roger Waters/RogerWaters_3.wav,Roger Waters,0,,0.6616346976867604,,,clip
+text_catboost_cfg1,9,data/nodementia/Sidney Poiter/sidney poiter_1.wav,Sidney Poiter,0,,0.10141857887767741,,,clip
+text_catboost_cfg1,9,data/nodementia/Sidney Poiter/sidney poiter_2.wav,Sidney Poiter,0,,0.004619033592252831,,,clip
+text_catboost_cfg1,9,data/nodementia/Sidney Poiter/sidney poiter_3.wav,Sidney Poiter,0,,0.44968093560352523,,,clip
+text_catboost_cfg1,9,data/dementia/Vampiro/Vampiro_0.wav,Vampiro,1,0.0,0.008109492268592046,,,clip
+text_catboost_cfg1,9,data/dementia/Vampiro/Vampiro_5.wav,Vampiro,1,5.0,0.042412200906490484,,,clip
+text_catboost_cfg1,9,data/nodementia/William Shatner/WilliamShatner_1.wav,William Shatner,0,,0.13957333583944706,,,clip
+text_catboost_cfg1,9,data/nodementia/William Shatner/WilliamShatner_2.wav,William Shatner,0,,0.002521162973024635,,,clip
+text_catboost_cfg1,9,data/nodementia/William Shatner/WilliamShatner_3.wav,William Shatner,0,,0.0800890599782789,,,clip
+text_catboost_cfg1,9,data/nodementia/Yoko Ono/YokoOno_1.wav,Yoko Ono,0,,0.009997431404992808,,,clip
+text_catboost_cfg1,9,data/nodementia/Yoko Ono/YokoOno_2.wav,Yoko Ono,0,,0.0355910382372634,,,clip
+text_catboost_cfg1,9,data/nodementia/Yoko Ono/YokoOno_3.wav,Yoko Ono,0,,0.054689806115948536,,,clip
+text_catboost_cfg1,9,,Barry Cohen,1,5.0,0.07022762669224145,,,speaker
+text_catboost_cfg1,9,,Francis Ford Coppola,0,,0.1390774991977724,,,speaker
+text_catboost_cfg1,9,,Gale Sayers,1,0.0,0.01532556702868005,,,speaker
+text_catboost_cfg1,9,,George Robb,1,10.0,0.051572668455011066,,,speaker
+text_catboost_cfg1,9,,Ian Holm,1,2.0,0.02403999694445184,,,speaker
+text_catboost_cfg1,9,,Iris Murdoch,1,5.0,0.45229210760659344,,,speaker
+text_catboost_cfg1,9,,Jack Webster,1,5.0,0.6981216389737953,,,speaker
+text_catboost_cfg1,9,,James Cromwell,0,,0.841202820375294,,,speaker
+text_catboost_cfg1,9,,Jane Fonda,0,,0.1264331711310015,,,speaker
+text_catboost_cfg1,9,,Joe Conley,1,0.0,0.08206048041959223,,,speaker
+text_catboost_cfg1,9,,Lee Majors,0,,0.5855267035103194,,,speaker
+text_catboost_cfg1,9,,Michael Caine,0,,0.14052791856961813,,,speaker
+text_catboost_cfg1,9,,Michel Piccoli,0,,0.04165921469561887,,,speaker
+text_catboost_cfg1,9,,Nick Nolte,0,,0.2074289559772119,,,speaker
+text_catboost_cfg1,9,,Peter Lupus,0,,0.0027929486661277623,,,speaker
+text_catboost_cfg1,9,,Richard Donner,0,,0.44996079755207,,,speaker
+text_catboost_cfg1,9,,Robert Vaughn,0,,0.6242128231004745,,,speaker
+text_catboost_cfg1,9,,Roger Waters,0,,0.34710325408745435,,,speaker
+text_catboost_cfg1,9,,Sidney Poiter,0,,0.18523951602448516,,,speaker
+text_catboost_cfg1,9,,Vampiro,1,0.0,0.025260846587541266,,,speaker
+text_catboost_cfg1,9,,William Shatner,0,,0.07406118626358353,,,speaker
+text_catboost_cfg1,9,,Yoko Ono,0,,0.03342609191940158,,,speaker
+text_catboost_cfg1,10,data/dementia/Abe Burrows/AbeBurrows_5.wav,Abe Burrows,1,5.0,0.22731782571202486,,,clip
+text_catboost_cfg1,10,data/nodementia/Betty White/Betty White_1.wav,Betty White,0,,0.8963158225115395,,,clip
+text_catboost_cfg1,10,data/nodementia/Betty White/Betty White_2.wav,Betty White,0,,0.5820292758229358,,,clip
+text_catboost_cfg1,10,data/nodementia/Betty White/Betty White_3.wav,Betty White,0,,0.41238176838894053,,,clip
+text_catboost_cfg1,10,data/dementia/Dan Ingram/daningram_15.wav,Dan Ingram,1,15.0,0.006936503108098497,,,clip
+text_catboost_cfg1,10,data/nodementia/David Cronenberg/DavidCronenberg_1.wav,David Cronenberg,0,,0.004570960754980699,,,clip
+text_catboost_cfg1,10,data/nodementia/David Cronenberg/DavidCronenberg_2.wav,David Cronenberg,0,,0.47163144477475666,,,clip
+text_catboost_cfg1,10,data/nodementia/David Cronenberg/DavidCronenberg_3.wav,David Cronenberg,0,,0.685635404647843,,,clip
+text_catboost_cfg1,10,data/nodementia/Dick van Patten/DickVanPatten_1.wav,Dick van Patten,0,,0.8832028565875182,,,clip
+text_catboost_cfg1,10,data/nodementia/Dick van Patten/DickVanPatten_3.wav,Dick van Patten,0,,0.05124692105092866,,,clip
+text_catboost_cfg1,10,data/dementia/Ernie Sigley/ErnieSigley_15.wav,Ernie Sigley,1,15.0,0.07663927785548744,,,clip
+text_catboost_cfg1,10,data/nodementia/Gilberto Gil/GilbertoGil_1.wav,Gilberto Gil,0,,0.007379924357901953,,,clip
+text_catboost_cfg1,10,data/nodementia/Gilberto Gil/GilbertoGil_2.wav,Gilberto Gil,0,,0.00308420936838242,,,clip
+text_catboost_cfg1,10,data/nodementia/Gilberto Gil/GilbertoGil_3.wav,Gilberto Gil,0,,0.8911027018750728,,,clip
+text_catboost_cfg1,10,data/dementia/Greg Fingers Taylor/GregFingersTaylor_10.wav,Greg Fingers Taylor,1,10.0,0.11162607882475563,,,clip
+text_catboost_cfg1,10,data/nodementia/James Earl Jones/james earl jones_1.wav,James Earl Jones,0,,0.03863713745265907,,,clip
+text_catboost_cfg1,10,data/nodementia/James Earl Jones/james earl jones_2.wav,James Earl Jones,0,,0.019167717208143968,,,clip
+text_catboost_cfg1,10,data/nodementia/Jerry Bruckheimer/JerryBruckheimer_2.wav,Jerry Bruckheimer,0,,0.047320130292885745,,,clip
+text_catboost_cfg1,10,data/nodementia/Jerry Bruckheimer/JerryBruckheimer_3.wav,Jerry Bruckheimer,0,,0.021216464479083787,,,clip
+text_catboost_cfg1,10,data/dementia/Jim Neidhart/JimNeidhart_0.wav,Jim Neidhart,1,0.0,0.2808261900146885,,,clip
+text_catboost_cfg1,10,data/dementia/Jim Neidhart/JimNeidhart_10.wav,Jim Neidhart,1,10.0,0.13439799473373926,,,clip
+text_catboost_cfg1,10,data/dementia/Jim Neidhart/JimNeidhart_15.wav,Jim Neidhart,1,15.0,0.31137714889420814,,,clip
+text_catboost_cfg1,10,data/dementia/John Mackey/johnmackey_15_1.wav,John Mackey,1,15.0,0.1217387765964615,,,clip
+text_catboost_cfg1,10,data/dementia/John Mackey/johnmackey_15_2.wav,John Mackey,1,15.0,0.14093787285974924,,,clip
+text_catboost_cfg1,10,data/nodementia/Jon Voight/JonVoight_1.wav,Jon Voight,0,,0.6876517427872005,,,clip
+text_catboost_cfg1,10,data/nodementia/Jon Voight/JonVoight_2.wav,Jon Voight,0,,0.1510554242621363,,,clip
+text_catboost_cfg1,10,data/nodementia/Jon Voight/JonVoight_3.wav,Jon Voight,0,,0.03833979697772005,,,clip
+text_catboost_cfg1,10,data/nodementia/Kenny Rogers/KennyRogers_1.wav,Kenny Rogers,0,,0.23682705855605726,,,clip
+text_catboost_cfg1,10,data/nodementia/Kenny Rogers/KennyRogers_3.wav,Kenny Rogers,0,,0.058174289894302914,,,clip
+text_catboost_cfg1,10,data/dementia/Pat Pariseau/patpariseau_10_1.wav,Pat Pariseau,1,10.0,0.021425508210814324,,,clip
+text_catboost_cfg1,10,data/dementia/Pat Pariseau/patpariseau_10_2.wav,Pat Pariseau,1,10.0,0.42182286808792024,,,clip
+text_catboost_cfg1,10,data/dementia/Pauline Phillips/PaulinePhillips_10.wav,Pauline Phillips,1,10.0,0.06043595566264138,,,clip
+text_catboost_cfg1,10,data/nodementia/Pele/Pele_1.wav,Pele,0,,0.3489040454181054,,,clip
+text_catboost_cfg1,10,data/nodementia/Pele/Pele_2.wav,Pele,0,,0.13290085180580147,,,clip
+text_catboost_cfg1,10,data/nodementia/Pele/Pel‚_3.wav,Pele,0,,0.013736008973958743,,,clip
+text_catboost_cfg1,10,data/nodementia/Queen Elisabeth/Queen Elisabeth_3.wav,Queen Elisabeth,0,,0.0019132732429764936,,,clip
+text_catboost_cfg1,10,data/dementia/Robert Anderson/RobertAnderson_10.wav,Robert Anderson,1,10.0,0.07054354215049656,,,clip
+text_catboost_cfg1,10,data/nodementia/Sam Waterston/SamWaterston_1.wav,Sam Waterston,0,,0.2529763402039648,,,clip
+text_catboost_cfg1,10,data/nodementia/Sam Waterston/SamWaterston_3.wav,Sam Waterston,0,,0.003916574879566721,,,clip
+text_catboost_cfg1,10,data/nodementia/Stacy Keach/StacyKeach_1.wav,Stacy Keach,0,,0.7547178158185288,,,clip
+text_catboost_cfg1,10,data/nodementia/Stacy Keach/StacyKeach_2.wav,Stacy Keach,0,,0.05633399521546394,,,clip
+text_catboost_cfg1,10,data/nodementia/Stacy Keach/StacyKeach_3.wav,Stacy Keach,0,,0.8872211623718036,,,clip
+text_catboost_cfg1,10,data/dementia/Teresa Gorman/TeresaGorman_10.wav,Teresa Gorman,1,10.0,0.25245413078368223,,,clip
+text_catboost_cfg1,10,data/nodementia/Terry Gilliam/TerryGilliam_1.wav,Terry Gilliam,0,,0.18561624393876586,,,clip
+text_catboost_cfg1,10,data/nodementia/Terry Gilliam/TerryGilliam_2.wav,Terry Gilliam,0,,0.03841666106453538,,,clip
+text_catboost_cfg1,10,data/nodementia/Terry Gilliam/TerryGilliam_3.wav,Terry Gilliam,0,,0.43035352550069017,,,clip
+text_catboost_cfg1,10,,Abe Burrows,1,5.0,0.22731782571202486,,,speaker
+text_catboost_cfg1,10,,Betty White,0,,0.6302422889078053,,,speaker
+text_catboost_cfg1,10,,Dan Ingram,1,15.0,0.006936503108098497,,,speaker
+text_catboost_cfg1,10,,David Cronenberg,0,,0.38727927005919344,,,speaker
+text_catboost_cfg1,10,,Dick van Patten,0,,0.4672248888192234,,,speaker
+text_catboost_cfg1,10,,Ernie Sigley,1,15.0,0.07663927785548744,,,speaker
+text_catboost_cfg1,10,,Gilberto Gil,0,,0.3005222785337857,,,speaker
+text_catboost_cfg1,10,,Greg Fingers Taylor,1,10.0,0.11162607882475563,,,speaker
+text_catboost_cfg1,10,,James Earl Jones,0,,0.02890242733040152,,,speaker
+text_catboost_cfg1,10,,Jerry Bruckheimer,0,,0.03426829738598477,,,speaker
+text_catboost_cfg1,10,,Jim Neidhart,1,0.0,0.2422004445475453,,,speaker
+text_catboost_cfg1,10,,John Mackey,1,15.0,0.13133832472810536,,,speaker
+text_catboost_cfg1,10,,Jon Voight,0,,0.29234898800901893,,,speaker
+text_catboost_cfg1,10,,Kenny Rogers,0,,0.1475006742251801,,,speaker
+text_catboost_cfg1,10,,Pat Pariseau,1,10.0,0.2216241881493673,,,speaker
+text_catboost_cfg1,10,,Pauline Phillips,1,10.0,0.06043595566264138,,,speaker
+text_catboost_cfg1,10,,Pele,0,,0.16518030206595521,,,speaker
+text_catboost_cfg1,10,,Queen Elisabeth,0,,0.0019132732429764936,,,speaker
+text_catboost_cfg1,10,,Robert Anderson,1,10.0,0.07054354215049656,,,speaker
+text_catboost_cfg1,10,,Sam Waterston,0,,0.12844645754176576,,,speaker
+text_catboost_cfg1,10,,Stacy Keach,0,,0.5660909911352654,,,speaker
+text_catboost_cfg1,10,,Teresa Gorman,1,10.0,0.25245413078368223,,,speaker
+text_catboost_cfg1,10,,Terry Gilliam,0,,0.21812881016799715,,,speaker
