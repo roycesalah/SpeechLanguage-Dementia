@@ -20,18 +20,18 @@ discriminative signal varies from the year of diagnosis to 15 years prior.
 
 ## Repository Structure
 SpeechLanguage-Dementia/
-├── transcriber.py                  # Whisper ASR transcription
-├── audio_feature_extraction.py     # openSMILE eGeMAPSv02 + pause metrics + WPM
-├── text_feature_extraction.py      # spaCy lexical features + SBERT + GPT-2 entropy
-├── ModularFramework/
-│   ├── build_text_features.py      # Text feature pipeline entry point
-│   ├── metadata.py                 # Builds metadata.csv from clip_id paths
-│   ├── experiments.py              # Experiment registry (LR, SVM, MLP, CatBoost, early/late fusion, ablations)
-│   ├── main_eval.py                # Nested CV evaluation runner
-│   ├── analyze.py                  # Post-processing, leaderboard, bin analysis
-│   ├── metrics.py                  # AUC, F1, sensitivity, specificity, Brier
-│   └── utils.py                    # Shared utilities
-└── out/                            # Experiment outputs and analysis results
+- transcriber.py                  # Whisper ASR transcription
+- audio_feature_extraction.py     # openSMILE eGeMAPSv02 + pause metrics + WPM
+- text_feature_extraction.py      # spaCy lexical features + SBERT + GPT-2 entropy
+- ModularFramework/
+-     build_text_features.py      # Text feature pipeline entry point
+-     metadata.py                 # Builds metadata.csv from clip_id paths
+-     experiments.py              # Experiment registry (LR, SVM, MLP, CatBoost, early/late fusion, ablations)
+-     main_eval.py                # Nested CV evaluation runner
+-     analyze.py                  # Post-processing, leaderboard, bin analysis
+-     metrics.py                  # AUC, F1, sensitivity, specificity, Brier
+-     utils.py                    # Shared utilities
+- out/                            # Experiment outputs and analysis results
 
 ---
 
