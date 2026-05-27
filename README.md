@@ -24,7 +24,7 @@ SpeechLanguage-Dementia/
 - audio_feature_extraction.py (openSMILE eGeMAPSv02 + pause metrics + WPM)
 - text_feature_extraction.py (spaCy lexical features + SBERT + GPT-2 entropy)
 - ModularFramework/
--     build_text_features.py      # Text feature pipeline entry point
+-   build_text_features.py      # Text feature pipeline entry point
 -     metadata.py                 # Builds metadata.csv from clip_id paths
 -     experiments.py              # Experiment registry (LR, SVM, MLP, CatBoost, early/late fusion, ablations)
 -     main_eval.py                # Nested CV evaluation runner
